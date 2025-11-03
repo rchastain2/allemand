@@ -1,0 +1,107 @@
+
+\documentclass[a4paper,11pt]{article}
+
+% https://www.deutschestextarchiv.de/book/view/nietzsche_zarathustra01_1883?p=21
+
+\usepackage[a4paper,margin=8mm,bmargin=16mm]{geometry}
+\usepackage[german,main=french]{babel}
+
+\usepackage{fontspec}
+\usepackage[letterspace=125]{microtype}% https://tex.stackexchange.com/a/17187/295527
+
+% https://texnique.fr/osqa/questions/8423/lualatex-et-ligatures
+\setmainfont{EBGaramond}
+[
+  Extension      = .otf ,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lowercase,
+  Ligatures      = Discretionary,
+  Style          = Swash
+]
+
+\usepackage{paracol}
+
+% https://tex.stackexchange.com/a/505562/295527
+\newcommand\chunks[2]{%
+\begin{leftcolumn*}\begin{otherlanguage}{german}%
+{#1}%
+\end{otherlanguage}\end{leftcolumn*}%
+\begin{rightcolumn}\begin{otherlanguage}{french}%
+{#2}%
+\end{otherlanguage}\end{rightcolumn}%
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+\setlength{\columnsep}{8mm}
+\setlength{\columnseprule}{0.4pt}
+
+\begin{paracol}{2}
+  \chunks{\begin{center}
+          \textbf{Der letzte Mensch}
+          \end{center}}
+         {\begin{center}
+          \textbf{Le dernier homme}
+          \end{center}}
+         
+  \chunks{So will ich ihnen vom Verächtlichsten sprechen:das aber ist \textls{der letzte Mensch}.}% https://tex.stackexchange.com/a/17187/295527
+         {Je leur parlerai de ce qu'il y a de plus méprisable au monde, je veux dire du Dernier Homme.}
+  \chunks{Und also sprach Zarathustra zum Volke:}
+         {Et Zarathoustra parla au peuple en ces termes:}
+  \chunks{Es ist an der Zeit, dass der Mensch sich sein Ziel stecke. Es ist an der Zeit, dass der Mensch den Keim seiner höchsten Hoffnung pflanze.}
+         {Il est temps que l'homme se fixe un but. Il est temps que l'homme plante le germe de son espérance suprême.}
+  \chunks{Noch ist sein Boden dazu reich genug. Aber dieser Boden wird einst arm und zahm sein, und kein hoher Baum wird mehr aus ihm wachsen können.}
+         {Son sol est encore assez riche pour cela. Mais ce sol, un jour, devenu pauvre et sans consistance, ne pourra plus donner naissance à un grand arbre.}
+  \chunks{Wehe! Es kommt die Zeit, wo der Mensch nicht mehr den Pfeil seiner Sehnsucht über den Menschen hinaus wirft, und die Sehne seines Bogens verlernt hat, zu schwirren!}
+         {Hélas! le temps approche où l'Homme ne lancera plus par-delà l'humanité la flèche de son désir, où la corde de son arc aura désappris de vibrer.}
+  \chunks{Ich sage euch: man muss noch Chaos in sich haben, um einen tanzenden Stern gebären zu können. Ich sage euch: ihr habt noch Chaos in euch.}
+         {Je vous le dis, il faut avoir encore du chaos en soi pour enfanter une étoile dansante. Je vous le dis, vous avez encore du chaos en vous.}
+  \chunks{Wehe! Es kommt die Zeit, wo der Mensch keinen Stern mehr gebären wird. Wehe! Es kommt die Zeit des verächtlichsten Menschen, der sich selber nicht mehr verachten kann.}
+         {Hélas ! Le temps vient où l'homme deviendra incapable d'enfanter une étoile dansante. Hélas ! ce qui vient, c'est l'époque de l'homme méprisable entre tous, qui ne saura même plus se mépriser lui-même.}
+  \chunks{Seht! Ich zeige euch \textls{den letzten Menschen}.}
+         {Voici, je vais vous montrer le Dernier Homme.}
+  \chunks{\glqq Was ist Liebe? Was ist Schöpfung? Was ist Sehnsucht? Was ist Stern?\grqq\ — so fragt der letzte Mensch und blinzelt.}
+         {\frquote{Qu'est-ce qu'aimer? Qu'est-ce que créer? Qu'est-ce que désirer? Qu'est-ce qu'une étoile?} Ainsi parlera le Dernier Homme, en clignant de l'œil.}
+  \chunks{Die Erde ist dann klein geworden, und auf ihr hüpft der letzte Mensch, der Alles klein macht. Sein Geschlecht ist unaustilgbar, wie der Erdfloh; der letzte Mensch lebt am längsten.}
+         {La terre alors sera devenue exiguë, on y verra sautiller le Dernier Homme qui rapetisse toute chose. Son engeance est aussi indestructible que celle du puceron; le Dernier Homme est celui qui vivra le plus longtemps.}
+  \chunks{\glqq Wir haben das Glück erfunden\grqq\ — sagen die letzten Menschen und blinzeln.}
+         {\frquote{Nous avons inventé le bonheur}, diront les Derniers Hommes en clignant de l'œil.}
+  \chunks{Sie haben die Gegenden verlassen, wo es hart war zu leben: denn man braucht Wärme. Man liebt noch den Nachbar und reibt sich an ihm: denn man braucht Wärme.}
+         {Ils auront abandonné les contrées où la vie est dure ; car on a besoin de la chaleur. On aimera encore son prochain et l'on se frottera contre lui, car il faut de la chaleur.}
+  \chunks{Krankwerden und Misstrauen-haben gilt ihnen sündhaft: man geht achtsam einher. Ein Thor, der noch über Steine oder Menschen stolpert!}
+         {La maladie, la méfiance leur paraîtront autant de péchés ; on n'a qu'à prendre garde où l'on marche ! Insensé qui trébuche encore sur les pierres ou sur les hommes !}
+  \chunks{Ein wenig Gift ab und zu: das macht angenehme Träume. Und viel Gift zuletzt, zu einem angenehmen Sterben.}
+         {Un peu de poison de temps à autre ; cela donne des rêves agréables; beaucoup de poison pour finir, afin d'avoir une mort agréable.}
+  \chunks{Man arbeitet noch, denn Arbeit ist eine Unterhaltung. Aber man sorgt, dass die Unterhaltung nicht angreife.}
+         {On travaillera encore, car le travail distrait. Mais on aura soin cette distraction ne devienne jamais fatigante.}
+  \chunks{Man wird nicht mehr arm und reich: Beides ist zu beschwerlich. Wer will noch regieren? Wer noch gehorchen? Beides ist zu beschwerlich.}
+         {On ne deviendra plus ni riche ni pauvre; c'est trop pénible. Qui voudra encore gouverner? Qui donc voudra obéir? L'un et l'autre, trop pénibles.}
+  \chunks{Kein Hirt und eine Heerde! Jeder will das Gleiche, Jeder ist gleich: wer anders fühlt, geht freiwillig in's Irrenhaus.}
+         {Pas de berger et un seul troupeau ! Tous voudront la même chose pour tous, seront égaux; quiconque sera d'un sentiment différent entrera volontairement à l'asile des fous.}
+  \chunks{\glqq Ehemals war alle Welt irre\grqq\ — sagen die Feinsten und blinzeln.}
+         {\frquote{Jadis tout le monde était fou}, diront les plus malins, en clignant de l'œil.}
+  \chunks{Man ist klug und weiss Alles, was geschehn ist: so hat man kein Ende zu spotten. Man zankt sich noch, aber man versöhnt sich bald — sonst verdirbt es den Magen.}
+         {On sera malin, on saura tout ce qui s'est passé jadis; ainsi l'on aura de quoi se gausser sans fin. On se chamaillera encore, mais on se réconcilie bien vite, de peur de se gâter la digestion.}
+  \chunks{Man hat sein Lüstchen für den Tag und sein Lüstchen für die Nacht: aber man ehrt die Gesundheit.}
+         {On aura son petit plaisir pour le jour et son petit plaisir pour la nuit; mais on révérera la santé.}
+  \chunks{\glqq Wir haben das Glück erfunden\grqq\ — sagen die letzten Menschen und blinzeln. —}
+         {\frquote{Nous avons inventé le bonheur}, diront les Derniers Hommes, en clignant de l'œil.}
+  \chunks{Und hier endete die erste Rede Zarathustra's, welche man auch \glqq die Vorrede\grqq\ heisst: denn an dieser Stelle unterbrach ihn das Geschrei und die Lust der Menge. \glqq Gieb uns diesen letzten Menschen, oh Zarathustra, — so riefen sie — mache uns zu diesen letzten Menschen! So schenken wir dir den Übermenschen!\grqq\ Und alles Volk jubelte und schnalzte mit der Zunge. Zarathustra aber wurde traurig und sagte zu seinem Herzen:}
+         {Ici prit fin le premier discours de Zarathoustra qu'on appelle aussi \frquote{le prologue} : car à ce moment les cris et l'hilarité de la foule l'interrompirent. \frquote{Donne-nous ce Dernier Homme, ô Zarathoustra, criaient-ils; fais de nous ces Derniers Hommes ! Et garde pour toi ton Surhumain !} Et tout le peuple exultait et faisait entendre des claquements de langue. Mais Zarathoustra en fut affligé et se dit en son cœur:}
+  \chunks{Sie verstehen mich nicht: ich bin nicht der Mund für diese Ohren.}
+         {Ils ne me comprennent point, je ne suis pas la bouche qui convient à ces oreilles.}
+         
+  \chunks{\begin{flushright}
+          \large\textsc{Nietzsche}, \textit{Also sprach Zarathustra}.
+          \end{flushright}}
+         {\begin{flushright}
+          \large\textsc{Nietzsche}, \textit{Ainsi parlait Zarathoustra}.
+          \end{flushright}}
+
+\end{paracol}
+
+\end{document}

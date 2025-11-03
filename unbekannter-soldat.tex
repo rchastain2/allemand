@@ -1,0 +1,251 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage[german,main=french]{babel}
+\usepackage{microtype}
+\usepackage[margin=16mm]{geometry}
+
+%\setmainfont[
+%  Path       = libre-baskerville/,
+%  Extension  = .otf,
+%  Ligatures  = TeX,
+%  BoldFont   = LibreBaskerville-Bold,
+%  ItalicFont = LibreBaskerville-Italic
+%]{LibreBaskerville-Regular}
+
+% https://www.fontsquirrel.com/fonts/libre-baskerville
+
+%\setmainfont{LibreBaskerville}
+
+\setmainfont{EBGaramond}
+[
+  Extension      = .otf ,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lowercase,
+  Ligatures      = Discretionary,
+  Style          = Swash
+]
+% https://texnique.fr/osqa/questions/8423/lualatex-et-ligatures
+
+%\setlength{\columnsep}{8mm}
+
+\usepackage{multicol}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{multicols}{2}
+\begin{otherlanguage}{german}%
+
+Unbekannter Soldat
+
+\bigskip
+
+Ich hör' deine Stimme
+
+Die sanft zu mir spricht
+
+Du Kamerad, bitte verrat' uns nicht
+
+Wir haben alles gegeben
+
+Und bezahlt mit unserm Leben
+
+Nun ist's an der Zeit
+
+Übernimmt uns'ren Eid
+
+Nimmt im Geiste die Waffen
+
+Ich weiß, ihr werdet's schaffen
+
+Und habt keine Angst
+
+Ihr seid nicht allein
+
+Egal, was geschieht
+
+Wir werden bei euch sein
+
+\bigskip
+
+Unbekannter Soldat, steh' heut vor deinem Grab
+
+Mit Efeu bedeckt, keiner, der an dich denkt
+
+Nur eine einzige Zahl erinnert an deine Qual
+
+Keiner kommt mehr hierher, niemand vermisst dich mehr
+
+Oh, es tut weh, wenn ich deinen Stein so seh'
+
+Treuer Soldat, mehr als ein namenloses Grab
+
+\bigskip
+
+Ich schwöre dir, so wahr ich hier steh'
+
+Ich trage die Fahne, wohin ich auch geh'
+
+Nie werd' ich euch verraten
+
+Für kein Geld der Welt
+
+Ich kämpfe für dich, ungebrochener Held
+
+Ich kämpfe für dich, unbekannter Held
+
+\bigskip
+
+Und wer dann noch lügt, euren Namen benutzt
+
+Eure Heldentaten durch Geldgier beschmutzt
+
+Den trifft das Schwert von unsichtbarer Hand
+
+Ein Totenwächter von Wotan gesandt
+
+Ein Totenwächter im schwarzen Gewand
+
+\bigskip
+
+Kamerad, du siehst, wir steh'n für euch ein
+
+Die Kraft, die wir brauchen, wird uns Wotan verleih'n
+
+Ihr gabt zu viel für dieses Land
+
+Es war der Glaube, der euch verband
+
+Es war der Glaube, der euch verband
+
+\bigskip
+
+Und kehre ich einst an deinem Stein zurück
+
+Berichte ich dir von unserem Glück
+
+Dann ist es geschafft und wir sind wieder frei
+
+Dein Grab wird wieder, darum ging's mir dabei
+
+Dein Grab wird wieder
+
+Denn jetzt sind wir frei
+
+\end{otherlanguage}
+
+\columnbreak
+
+\begin{otherlanguage}{french}%
+
+Soldat inconnu
+
+\bigskip
+
+J'entends ta voix
+
+Qui me dit tout bas
+
+Camarade, s'il te plaît, ne nous trahis pas
+
+Nous avons tout donné
+
+Et payé de nos vies
+
+Maintenant il est temps
+
+Prêtez notre serment
+
+Prendre les armes mentalement
+
+Je sais que tu le feras
+
+Et n'aie pas peur
+
+Tu n'es pas seul
+
+Peu importe ce qui arrive
+
+Nous serons avec vous
+
+\bigskip
+
+Soldat inconnu, je me tiens aujourd'hui devant ta tombe
+
+Couverte de lierre, personne pour penser à toi
+
+Seul un numéro rappelle ton tourment
+
+Personne ne vient plus ici, tu ne manques plus à personne
+
+Oh, ça fait mal quand je vois ta pierre comme ça
+
+Soldat fidèle, plus qu'une tombe sans nom
+
+\bigskip
+
+Je te le jure, aussi vrai que je suis ici
+
+Je porte le drapeau partout où je vais
+
+Je ne te trahirai jamais
+
+Même pas pour tout l'argent au monde
+
+Je me bats pour toi, héros ininterrompu
+
+Je me bats pour toi, héros inconnu
+
+\bigskip
+
+Et celui qui ment, qui utilise vos noms
+
+Qui salit vos exploits par cupidité
+
+Que l'épée d'une main invisible le frappe
+
+Un garde de la mort envoyé par Wotan
+
+Un garde de la mort en robe noire
+
+\bigskip
+
+Camarade, tu vois, nous te défendons
+
+Wotan nous donnera la force dont nous avons besoin
+
+Tu as trop donné pour ce pays
+
+C'est la foi qui t'a connecté
+
+C'est la foi qui t'a connecté
+
+\bigskip
+
+Et un jour je reviendrai à ta pierre
+
+Je vais te parler de notre bonheur
+
+Ensuite c'est fait et nous sommes à nouveau libres
+
+Ta tombe sera de retour, c'est de ça que je parlais
+
+Ta tombe sera à nouveau
+
+Parce que maintenant nous sommes libres
+
+\end{otherlanguage}
+\end{multicols}
+
+%\begin{flushright}
+%\large\textit{Évangile selon saint Matthieu}, chap. V.
+%\bigskip\footnotesize Traduction Crampon.
+%\end{flushright}
+
+\end{document}
