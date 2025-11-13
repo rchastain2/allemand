@@ -1,0 +1,23 @@
+% https://tex.stackexchange.com/a/558049
+
+%The package to use is metalogo (which xltxtra loads and uses for the logo).
+%
+%Don't load xltxtra which does also other things, mostly unwanted.
+%
+%Besides, metalogo can be used with any engine.
+%
+%You can also employ hologo, but metalogo provides functions that help to adapt the (La)TeX related logos to different fonts.
+%
+%Consult the documentation of both packages for more details. In the example, I use both, but metalogo is normally to be preferred.
+
+\documentclass{article}
+\usepackage{hologo}
+\usepackage{metalogo}
+
+\begin{document}
+
+\texttt{hologo}: \hologo{XeTeX}
+
+\texttt{metalogo}: \XeTeX
+
+\end{document}
