@@ -1,0 +1,139 @@
+object frmMain: TfrmMain
+  Left = 530
+  Height = 600
+  Top = 133
+  Width = 800
+  Caption = 'Traducteur'
+  ClientHeight = 600
+  ClientWidth = 800
+  Constraints.MinHeight = 500
+  Constraints.MinWidth = 800
+  Menu = MM_Menu
+  LCLVersion = '4.2.0.0'
+  OnCreate = FormCreate
+  object MM_Source: TMemo
+    Left = 8
+    Height = 536
+    Top = 8
+    Width = 388
+    Lines.Strings = (
+      'Wir haben das Glück erfunden — sagen die letzten Menschen und blinzeln.'
+    )
+    TabOrder = 0
+  end
+  object MM_Target: TMemo
+    Left = 404
+    Height = 536
+    Top = 8
+    Width = 388
+    TabOrder = 1
+  end
+  object BT_Translate: TButton
+    Left = 140
+    Height = 40
+    Top = 552
+    Width = 124
+    Action = AC_Translate
+    Caption = 'Traduire'
+    TabOrder = 2
+  end
+  object BT_Paste: TButton
+    Left = 8
+    Height = 40
+    Hint = 'Coller le texte original'
+    Top = 552
+    Width = 124
+    Caption = 'Coller'
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+    OnClick = BT_PasteClick
+  end
+  object BT_Copy: TButton
+    Left = 272
+    Height = 40
+    Hint = 'Copier la traduction'
+    Top = 552
+    Width = 124
+    Caption = 'Copier'
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 4
+    OnClick = BT_CopyClick
+  end
+  object CB_V2: TCheckBox
+    Left = 404
+    Height = 40
+    Hint = 'Utiliser la deuxième version de la fonction appelant Google Translate'
+    Top = 552
+    Width = 58
+    AutoSize = False
+    Caption = 'V2'
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 5
+    OnChange = CB_V2Change
+  end
+  object BT_PTC: TButton
+    Left = 536
+    Height = 40
+    Top = 552
+    Width = 124
+    Caption = 'Tout en un clic'
+    TabOrder = 6
+    OnClick = BT_PTCClick
+  end
+  object BT_Quit: TButton
+    Left = 668
+    Height = 40
+    Top = 552
+    Width = 124
+    Action = FE_Close
+    Caption = 'Fermer'
+    TabOrder = 7
+  end
+  object ED_TL: TEdit
+    Left = 503
+    Height = 31
+    Top = 552
+    Width = 25
+    TabOrder = 8
+    Text = 'fr'
+  end
+  object ED_SL: TEdit
+    Left = 470
+    Height = 31
+    Top = 552
+    Width = 25
+    TabOrder = 9
+    Text = 'de'
+  end
+  object AL_List: TActionList
+    Left = 680
+    Top = 480
+    object FE_Close: TFileExit
+      Caption = 'Close'
+    end
+    object AC_Translate: TAction
+      Category = 'Arrays'
+      Caption = 'Translate'
+      OnExecute = AC_TranslateExecute
+    end
+    object AC_Translate2: TAction
+      Category = 'Object'
+      Caption = 'Translate'
+      OnExecute = AC_Translate2Execute
+    end
+  end
+  object MM_Menu: TMainMenu
+    Left = 680
+    Top = 416
+    object MI_Trad: TMenuItem
+      Caption = 'Traducteur'
+      object MI_Close: TMenuItem
+        Action = FE_Close
+        Caption = 'Fermer'
+      end
+    end
+  end
+end
