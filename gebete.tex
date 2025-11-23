@@ -32,12 +32,13 @@
 
 \usepackage{paracol}
 % https://tex.stackexchange.com/a/505562/295527
+% https://tex.stackexchange.com/a/755246/295527
 \newcommand\chunks[2]{%
 \begin{leftcolumn*}\begin{otherlanguage}{latin}%
-{#1}%
+\noindent\kern\parindent\ignorespaces#1%
 \end{otherlanguage}\end{leftcolumn*}%
 \begin{rightcolumn}\begin{otherlanguage}{german}%
-{#2}%
+\noindent\kern\parindent\ignorespaces#2%
 \end{otherlanguage}\end{rightcolumn}%
 }
 
