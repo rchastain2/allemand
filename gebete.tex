@@ -1,0 +1,93 @@
+\documentclass[14pt,a4paper]{extarticle}
+
+\usepackage{fontspec}
+\usepackage[german,latin]{babel}
+\usepackage{microtype}
+\usepackage[margin=16mm]{geometry}
+
+%\setmainfont[
+%  Path       = libre-baskerville/,
+%  Extension  = .otf,
+%  Ligatures  = TeX,
+%  BoldFont   = LibreBaskerville-Bold,
+%  ItalicFont = LibreBaskerville-Italic
+%]{LibreBaskerville-Regular}
+
+% https://www.fontsquirrel.com/fonts/libre-baskerville
+
+%\setmainfont{LibreBaskerville}
+
+\setmainfont{EBGaramond}
+[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lowercase,
+  Ligatures      = Discretionary,
+  Style          = Swash
+]
+% https://texnique.fr/osqa/questions/8423/lualatex-et-ligatures
+
+\usepackage{paracol}
+% https://tex.stackexchange.com/a/505562/295527
+\newcommand\chunks[2]{%
+\begin{leftcolumn*}\begin{otherlanguage}{latin}%
+{#1}%
+\end{otherlanguage}\end{leftcolumn*}%
+\begin{rightcolumn}\begin{otherlanguage}{german}%
+{#2}%
+\end{otherlanguage}\end{rightcolumn}%
+}
+
+\setlength{\columnsep}{8mm}
+\setlength{\columnseprule}{0.4pt}
+
+\usepackage[center]{titlesec}% https://tex.stackexchange.com/a/107282/295527
+
+%\setlength{\parindent}{0pt}
+
+\begin{document}
+\thispagestyle{empty}
+
+%\section*{\centering GEBETE.}
+\section*{GEBETE.}
+
+\subsection*{Das heilige Kreuzzeichen.}
+\begin{paracol}{2}
+\chunks{In Nomine Patris, et Filii, et Spiritus Sancti. Amen.}
+       {Im Namen des Vaters und des Sohnes und des Heiligen Geistes. Amen.}
+\end{paracol}
+
+\subsection*{Das Gebet des Herrn.}
+\begin{paracol}{2}
+\chunks{\textsc{Pater} noster, qui es in cælis; sanctificetur nomen tuum; adveniat regnum tuum; fiat voluntas tua, sicut in cælo et in terra. Panem nostrum quotidianum da nobis hodie; et dimitte nobis debita nostra, sicut et nos dimittimus debitoribus nostris; et ne nos inducas in tentationem; sed libera nos a malo. Amen.}
+       {\textsc{Vater} unser, der Du bist im Himmel, geheiligt werde Dein Name; zu uns komme Dein reich; Dein Wille geschehe, wie in Himmel, also auch auf Erden! Unser tägliches brot gib uns heute; und vergib uns unsere Schuld, wie auch wir vergeben unsern Schuldigern: und führe uns nicht in Versuchung, sondern erlösen uns von dem Übel! Amen.}
+\end{paracol}
+
+\subsection*{Das «Gegrüsset seist du, Maria».}
+\begin{paracol}{2}
+\chunks{\textsc{Ave}, Maria, gratia plena, Dominus tecum, benedicta tu in mulieribus et benedictus fructus ventris tui, Jesus.}
+       {\textsc{Gegrüsset} seist du, Maria, voll der Gnade; der Herr ist mit dir; du bist gebeinedeit unter den Weibern, und gebeinedeit ist die Frucht deines Leibes, Jesus.}
+\chunks{Sancta Maria, Mater Dei, ora pro nobis peccatoribus, nunc et in hora mortis nostræ. Amen.}
+       {Heilige Maria, Mutter Gottes, bitte für uns Sünder jetzt und in der Stunde unseres Todes! Amen.}
+\end{paracol}
+
+\subsection*{Das Apostolische Glaubensbekenntnis.}
+\begin{paracol}{2}
+\chunks{\textsc{Credo} in Deum, Patrem omnipotentem, creatorem cæli et terræ. Et In Jesum Christum, Filium ejus unicum, Dominum nostrum : qui conceptus est de Spiritu Sancto, natus est Maria Virgine, passus sub Pontio Pilato, crucifixus, mortuus et sepultus : descendit ad inferos : tertiadie, resurrexit a mortuis : ascendit ad cælos, sedet ad dexteram Dei Patris omnipotentis : inde venturus est judicare vivos et mortuos.}
+       {\textsc{Ich} glaube an Gott, den allmächtigen Vater, Schöpfer des Himmels und der Erde, und an Jesus Christus, Seinen eingeborenen Sohn, unsern Herrn, der empfangen ist vom Heiligen Geiste, geboren aus Maria der Jungfrau, gelitten unter Pontius Pilatus, gekreuzigt, gestorben und begraben, abgestiegen zu der Hölle, am dritten Tage wieder auferstanden von den Toten, aufgefahren in den Himmel, sitzet zur Rechten Gottes, des allmächtigen Vaters, von dannen Er kommen wird, zu richten die Lebendigen und die Toten.}
+\chunks{}
+       {}
+\end{paracol}
+
+\vspace*{\fill}
+\begin{flushright}\footnotesize
+DER KATHOLISCHE PFARRGOTTESDIENST\par
+MESSE UND VESPER DER SONN- UND FESTTAGE\par
+LATEINISCH UND DEUTSCH\par
+DESCLÉE \& CIE
+1958
+\end{flushright}
+\end{document}
