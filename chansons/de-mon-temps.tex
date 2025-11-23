@@ -1,0 +1,142 @@
+
+% https://tex.stackexchange.com/a/505562/295527
+
+%\documentclass[a6paper,pagesize,12pt]{book}
+%\documentclass[a4paper,10pt]{book}
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[margin=8mm]{geometry}
+%\usepackage[svgnames]{xcolor}
+\usepackage[french, main=german]{babel}
+\usepackage{fontspec, microtype, paracol}
+
+\defaultfontfeatures{Scale=MatchUppercase}
+\babelfont{rm}
+          [Scale=1.0,
+           Language=Default,
+           Ligatures={Common, TeX}
+          ]{TeX Gyre Schola} % Or your font of choice.
+
+\newfontfamily\symbolfont{DejaVu Sans}
+
+%\pagenumbering{gobble}
+%\setlength\columnseprule{0.4pt}
+%\sloppy
+
+\usepackage{verse}
+
+\begin{document}
+%\begin{center}
+%{\LARGE \textbf{\textsc{Red svete maše}}} \\ \vspace{1cm}
+%\textbf{Pristopne molitve (KLEČIMO)}
+%\end{center}
+\begin{paracol}{2}
+\begin{leftcolumn}\begin{otherlanguage}{german}%
+\settowidth{\versewidth}{Bestand noch Recht und Billigkeit.}%
+\begin{verse}[\versewidth]%
+\poemtitle{Zu meiner Zeit.}%
+% https://www.lieder.net/lieder/get_text.html?TextId=123236
+\noindent
+Zu meiner Zeit, zu meiner Zeit,\\
+Bestand noch Recht und Billigkeit.\\
+Da wurden auch aus Kindern Leute,\\
+Aus tugendhaften Mädchen Bräute;\\
+Doch alles mit Bescheidenheit.\\
+O gute Zeit, o gute Zeit!\\
+Es ward kein Jüngling zum Verräter,\\
+Und unsre Jungfern freiten später,\\
+Sie reizten nicht der Mütter Neid.\\
+O gute, Zeit, o gute Zeit!
+
+Zu meiner Zeit, zu meiner Zeit\\
+Befliß man sich der Heimlichkeit.\\
+Genoß der Jüngling ein Vergnügen,\\
+So war er dankbar und verschwiegen;\\
+Doch jetzt entdeckt er's ungescheut.\\
+O schlimme Zeit, o schlimme Zeit!\\
+Die Regung mütterlicher Triebe,\\
+Der Vorwitz und der Geist der Liebe\\
+Fährt jetzt oft schon in's Flügelkleid.\\
+O schlimme Zeit, o schlimme Zeit!
+
+Zu meiner Zeit, zu meiner Zeit\\
+ward Pflicht und Ordnung nicht entweiht.\\
+Der Mann ward, wie es sich gebühret,\\
+Von einer lieben Frau regieret,\\
+Trotz seiner stolzen Männlichkeit.\\
+O gute Zeit, o gute Zeit!\\
+Die Fromme herrschte nur gelinder,\\
+Uns blieb der Hut und ihm die Kinder;\\
+Das war die Mode weit und breit.\\
+O gute Zeit, o gute Zeit!
+
+Zu meiner Zeit, zu meiner Zeit\\
+war noch in Ehen Einigkeit.\\
+Jetzt darf der Mann uns fast gebieten,\\
+Uns widersprechen und uns hüten,\\
+Wo man mit Freunden sich erfreut.\\
+O schlimme Zeit, o schlimme Zeit!\\
+Mit dieser Neuerung im Lande,\\
+Mit diesem Fluch im Ehestande\\
+Hat ein Komet uns längst bedräut.\\
+O schlimme Zeit, o schlimme Zeit!
+\end{verse}
+\end{otherlanguage}\end{leftcolumn}
+\begin{rightcolumn}\begin{otherlanguage}{french}%
+\settowidth{\versewidth}{Il y avait encore du droit et de la justice.}%
+\begin{verse}[\versewidth]%
+\poemtitle{De mon temps.}%
+% https://www.lieder.net/lieder/get_text.html?TextId=123236
+\noindent
+De mon temps, de mon temps,\\
+Il y avait encore du droit et de la justice.\\
+Là les enfants devenaient des hommes,\\
+Et les jeunes filles vertueuses des fiancées ;\\
+Mais tout avec modestie.\\
+Ô le bon vieux temps, ô le bon vieux temps !\\
+Aucun jeune homme ne devenait un traître,\\
+Et nos jeunes filles plus tard se mariaient,\\
+Elles n'excitaient pas l'envie des mères.\\
+Ô le bon vieux temps, ô le bon vieux temps !
+
+De mon temps, de mon temps\\
+On faisait attention à être discret.\\
+Si le jeune homme éprouvait du plaisir,\\
+Il était reconnaissant et gardait le secret ;\\
+Mais maintenant il le révèle hardiment ;\\
+Ô triste temps, ô triste temps !\\
+L'instinct maternel,\\
+La curiosité et le désir d'amour\\
+Arrivent souvent avant de savoir voler.\\
+Ô triste temps, ô triste temps !
+
+De mon temps, de mon temps\\
+Le devoir et l'ordre n'étaient pas profanés.\\
+Le mari était, comme il se doit,\\
+Gouverné par une femme aimée,\\
+Malgré sa fierté masculine.\\
+Ô le bon vieux temps, ô le bon vieux temps !\\
+La femme pieuse régnait plus doucement,\\
+À nous la maison, à lui les enfants.\\
+C'était une coutume largement répandue.\\
+Ô le bon vieux temps, ô le bon vieux temps !
+
+De mon temps, de mon temps\\
+Il y avait encore une unité dans le mariage\\
+Maintenant le mari peut presque nous commander,\\
+Nous contredire et nous garder\\
+Quand nous aurions plaisir à être avec des amis.\\
+Ô triste temps, ô triste temps !\\
+Avec ces innovations dans le pays,\\
+Avec cette malédiction sur la vie conjugale,\\
+Une comète nous menace pour longtemps.\\
+Ô triste temps, ô triste temps !
+\end{verse}
+
+\begin{flushright}
+\large
+\textsc{La Fontaine}, \textit{Fables}.
+\end{flushright}
+\end{otherlanguage}\end{rightcolumn}
+\end{paracol}
+\end{document}
