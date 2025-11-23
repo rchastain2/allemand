@@ -1,0 +1,418 @@
+
+% https://www.teuderun.de/latex/
+
+\documentclass[12pt,a4paper,french]{scrartcl}
+
+\usepackage{fontspec}
+\usepackage{babel}
+\usepackage{metalogo}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+%\setmainfont{Palatino Linotype}
+%\setmainfont{Junicode}
+%\setmainfont{Vollkorn}
+
+% https://tex.stackexchange.com/a/230193
+%\setmainfont[ExternalLocation=vollkorn-4-105/TTF/]{Vollkorn-Regular.ttf}%
+%[
+%  Ligatures      = TeX,
+%  BoldFont       = Vollkorn-Bold.ttf,
+%  ItalicFont     = Vollkorn-Italic.ttf,
+%  BoldItalicFont = Vollkorn-BoldItalic.ttf
+%]
+
+\setmainfont{Alegreya}
+\setsansfont{AlegreyaSans}
+
+%\setkomafont{section}{\normalfont}
+%\setkomafont{section}{\normalfont\itshape}
+%\setkomafont{author}{\normalfont}
+%\setkomafont{title}{\normalfont\bfseries}
+%\setkomafont{title}{\normalfont}
+
+%\addtokomafont{disposition}{\color{blue}}
+%\addtokomafont{section}{\color{blue}}
+%\addtokomafont{sectioning}{\color{blue}}
+%\addtokomafont{subsection}{\color{blue}}
+%\addtokomafont{sectionentrypagenumber}{\color{blue}}
+
+%\addtokomafont{sectionentry}{\color{Turquoise}}
+%\addtokomafont{sectionentry}{\color{Cerulean}}
+%\addtokomafont{sectionentry}{\color{CornflowerBlue}}
+\addtokomafont{sectionentry}{\color{RoyalBlue}}
+%\addtokomafont{subsectionentry}{\color{RoyalBlue}}
+
+%\RedeclareSectionCommands[
+%  tocentryformat=\usekomafont{disposition}\color{RoyalBlue},
+%  toclinefill=\color{black}\TOCLineLeaderFill,
+%  tocpagenumberformat=\usekomafont{disposition}\color{black}
+%]{section,subsection,subsubsection,paragraph,subparagraph}
+
+%\RedeclareSectionCommands[
+%  tocentryformat=\color{RoyalBlue},
+%  toclinefill=\color{black}\TOCLineLeaderFill,
+%  tocpagenumberformat=\color{black}
+%]{section,subsection,subsubsection,paragraph,subparagraph}
+
+%\title{Vergleich zwischen \TeX{}\\und herkömmlichen Textverarbeitungen}
+%\subtitle{Ein sachlicher Vergleich}
+%\author{Gregor Barth}
+%\date{v2.14 vom 21. Dezember 2023}
+\title{Comparaison entre \TeX{}\\et les traitements de texte populaires}
+\subtitle{Une comparaison objective}
+\author{Gregor Barth}
+\date{v2.14 vom 21. Dezember 2023}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%\section{Vorwort und Begrifflichkeiten}
+\section{Préface et terminologie}
+
+%Verglichen werden sollen die Ergebnisse eines \TeX{}-Systems mit denen einer herkömmlichen Textverarbeitung. Im Folgenden wird von \TeX{} gesprochen, wenn \TeX{}, \XeTeX{}, \LuaTeX{} und andere Varianten gemeint sind (im weiteren Sinne auch \texttt{groff}). Ein \TeX{}-System besteht üblicherweise aus einer \TeX{}-Distribution (Pakete-Sammlung, z. B. TeXLive) und einem beliebigen Text-Editor (WYSIWYM-Editor), idealerweise einem speziellen \TeX{}-Editor (Anzeige der Dokumentstruktur, Syntax-Hervorhebung, Hilfe bei Verweisen etc.). Wo der Unterschied von Bedeutung ist, wird darauf hingewiesen.
+Les résultats obtenus avec un système \TeX{} seront comparés à ceux d'un traitement de texte classique. Dans ce qui suit, le terme « \TeX{} » désigne \TeX{}, \XeTeX{}, \LuaTeX{} et ses variantes (ainsi que \texttt{Groff}, au sens large). Un système \TeX{} se compose généralement d'une distribution \TeX{} (une collection de paquets, par exemple TeXLive) et d'un éditeur de texte (éditeur WYSIWYM), idéalement un éditeur \TeX{} dédié (affichant la structure du document, la coloration syntaxique, l'assistance à la recherche, etc.). Toute différence significative sera signalée.
+
+%Mit dem Ausdruck »herkömmliche Textverarbeitung« ist Software gemeint, die allgemein Bestandteil jeder Büro-Software-Suite ist: LibreOffice Writer, Microsoft Word, Calligra Words, Abiword, Lotus Words, Pages, Corel WordPerfect etc. Es handelt sich hierbei durchweg um WYSIWYG-Editoren. Wo der Unterschied von Bedeutung ist, wird darauf hingewiesen.
+Le terme « traitement de texte classique » désigne les logiciels généralement inclus dans les suites bureautiques : LibreOffice Writer, Microsoft Word, Calligra Words, Abiword, Lotus Words, Pages, Corel WordPerfect, etc. Ce sont tous des éditeurs WYSIWYG. Toute différence significative sera mentionnée.
+
+%Es werden in diesen Vergleich keine DTP-Programme wie Adobe InDesign, Quark Xpress oder Scribus hinzugezogen. Dem Autor ist bekannt, daß mit diesen Programmen komplexer Textsatz (insbesondere mit hohem Bilder-Anteil, Zeitschriften) umgesetzt werden kann, zu dem herkömmliche Textverarbeitungen und auch \TeX{} teilweise nur bedingt fähig sind. Ebenso unbeachtet bleiben in diesem Vergleich zahlreiche Programme für Spezialanwendungen, beispielsweise Editoren für Drehbuchaut
+Cette comparaison n'inclut pas les logiciels de PAO (Publication Assistée par Ordinateur) tels qu'Adobe InDesign, QuarkXPress ou Scribus. L'auteur est conscient que ces logiciels permettent une mise en page complexe (notamment avec une forte proportion d'images, comme dans les magazines), une tâche que les traitements de texte classiques et même \TeX{} ne peuvent accomplir que partiellement. De même, de nombreux logiciels destinés à des applications spécialisées, tels que les éditeurs de scénarios, ne sont pas pris en compte dans cette comparaison.
+
+%Mit diesem Vergleich wird beabsichtigt, die verbreitete Voreingenommenheit gegenüber der WYSIWYM-Arbeitsweise zu lösen, auch wenn die Erstellung kurzer Briefe bis hin zu umfangreichen Dokumenten mit einem GUI-Textverarbeitungsprogramm einfacher und schneller erscheint. Der häufigste Grund für die Ablehnung von WYSIWYM ist die Arbeit mit Quellcode, jenem mystischen Äther, der nur aus kryptischen Befehlen zu bestehen scheint. Es soll gezeigt werden, daß nicht nur die Arbeit mit dem Quellcode mehr Kontrolle bietet, sondern daß gerade bei umfangreich strukturierten Dokumenten (wissenschaftliche Abschlußarbeiten etc.) und bei Aspekten der Qualitätskontrolle Vorzüge bestehen, die ein gewöhnliches Textverarbeitungsprogramm nicht bieten kann.
+Cette comparaison vise à dissiper les préjugés répandus contre l'approche WYSIWYM (Ce que vous voyez est ce que vous voulez dire), même si la création de lettres courtes ou de documents longs avec un traitement de texte à interface graphique peut sembler plus simple et plus rapide. La raison la plus courante de rejeter le WYSIWYM est la difficulté à travailler avec le code source, cet éther mystérieux qui semble ne contenir que des commandes cryptiques. Cette comparaison démontrera que travailler avec le code source offre non seulement un meilleur contrôle, mais aussi des avantages, notamment pour les documents complexes (thèses universitaires, etc.) et le contrôle qualité, qu'un traitement de texte standard ne peut tout simplement pas offrir.
+
+%\section{Konzeptbedingte Unterschiede in der Arbeitsweise}
+\section{Différences conceptuelles dans les méthodes de travail}
+
+%Eine Textverarbeitung wie MS Word oder LO Writer ist ein sog. WYSIWYG-Editor. Das steht für what you see is what you get und heißt: Was ich über die Tastatur eingebe, erscheint am Bildschirm mit derjenigen Formatierung, wie sie später gedruckt oder veröffentlicht werden soll. Auf dem Weg zum Drucker oder zum PDF kann allerdings eine Abwandlung der gedachten Formatierung (Layout) nicht ausgeschlossen werden.
+Un traitement de texte comme MS Word ou LibreOffice Writer est un éditeur WYSIWYG. Cela signifie que ce que vous voyez est ce que vous obtenez : ce que vous tapez au clavier s’affiche à l’écran avec la mise en forme prévue pour l’impression ou la publication. Toutefois, une modification de la mise en page peut survenir lors de l’impression ou de la conversion en PDF.
+
+%WYSIWYG-Editoren bieten normalerweise eine üppig ausgebaute GUI (Programmoberfläche) mit allen erforderlichen Buttons für die Strukturierung oder Formatierung des Textdokuments, darunter Schalter für die Farbwahl, Schriftgröße, Zeilenabstand und Zeichenformatierung (Kursivierung, Fette, Unterstreichung etc.). Diese scheinbare Bequemlichkeit ist eine der Ursachen, wie Nutzer unbewußt zu einer schlechten Typographie kommen: Ihnen wird professioneller Textsatz über Buttons zugetraut, ohne zu wissen, was dahintersteht oder wann eine solche Formatierung wirklich angewendet werden sollte. Nutzer stellen oft Seitenformate nach Augenmaß ein, oder strukturieren ihren Text, indem sie Kapitelnummern von Hand vergeben. Selbstverständlich entscheidet letztlich das Auge darüber, ob ein Text gut gesetzt ist. Doch es gibt gewisse Regeln, die eingehalten werden sollten, um den Vorgaben guter Lesbarkeit zu entsprechen:
+Les éditeurs WYSIWYG offrent généralement une interface graphique complète avec tous les boutons nécessaires à la structuration et à la mise en forme d'un document texte, notamment des options pour la sélection des couleurs, la taille des polices, l'interligne et la mise en forme des caractères (italique, gras, souligné, etc.). Cette apparente facilité d'utilisation est l'une des raisons pour lesquelles les utilisateurs produisent souvent, sans s'en rendre compte, une typographie médiocre : on leur fait confiance pour créer une mise en page professionnelle à l'aide de boutons, sans qu'ils comprennent leur fonctionnement ni quand appliquer une telle mise en forme. Les utilisateurs définissent souvent la taille des pages à l'œil nu ou structurent leur texte en attribuant manuellement des numéros de chapitre. Bien sûr, en fin de compte, c'est l'œil qui juge d'un texte bien mis en page. Cependant, certaines règles doivent être respectées pour garantir une bonne lisibilité :
+
+%\begin{itemize}
+%  \item harmonische Seitenränder (z. B. nach dem sog. Goldenen Schnitt oder ganzzahligen Seitenverhältnissen) und eine dazu passende Schriftgröße, sodaß nicht zu viele Wörter pro Zeile gesetzt werden,
+%  \item zur Schriftgröße passender Durchschuß,
+%  \item eine für Mengentext angenehm lesbare Schriftart und ggf. dazu passende Schrift für Überschriften, Bildunterschriften usw.,
+%  \item Anordnung von Bildern immer in Rückwirkung mit dem umgebenden Text (anstatt manuelle Anordnung nach Gutdünken),
+%  \item konsequente Anwendung von Absatzvorlagen etc.
+%\end{itemize}
+\begin{itemize}
+  \item des marges de page harmonieuses (par exemple, selon le nombre d'or ou des proportions entières) et une taille de police appropriée, afin de ne pas placer trop de mots par ligne,
+  \item un interlignage adapté à la taille de la police,
+  \item une police facile à lire pour le corps du texte et, si nécessaire, une police assortie pour les titres, les légendes, etc.
+  \item des images disposées en fonction du texte qui les entoure (au lieu d'être disposées manuellement à volonté),
+  \item une application cohérente des modèles de paragraphes, etc.
+\end{itemize}
+
+%Der große Nachteil der WYSIWYG-Arbeitsweise ist, daß der Nutzer permanent, d. h. noch während des Schaffensprozesses, in Layout und Formatierung seines Textes eingreift, anstatt sich, wie es sein sollte, auf den bloßen Inhalt zu konzentrieren.
+Le principal inconvénient du flux de travail WYSIWYG est que l'utilisateur intervient constamment dans la mise en page et le formatage de son texte, c'est-à-dire même pendant le processus de création, au lieu de se concentrer sur le contenu lui-même, comme il le devrait.
+
+%Dieser Arbeitsweise stehen WYSIWYM-Editoren gegenüber. WYSIWYM steht für what you see is what you mean und bedeutet schlichtweg: Ich habe die volle Kontrolle über meinen Text und nur was ich an Formatierungsregeln vorgebe, das wird auch angewendet und umgesetzt. Ein im WYSIWYM-Editor geschriebener Text (»Quellcode«) wird dann an den \TeX{}-Compiler zum Setzen übergeben, der daraus das Endergebnis (meist PDF) er
+Cette approche contraste avec les éditeurs WYSIWYM. WYSIWYM signifie « ce que vous voyez est ce que vous voulez dire » et signifie simplement : j’ai un contrôle total sur mon texte, et seules les règles de mise en forme que je spécifie sont appliquées. Le texte écrit dans un éditeur WYSIWYM (le « code source ») est ensuite transmis au compilateur \TeX{} pour la composition, qui génère le résultat final (généralement un PDF).
+
+%In einem WYSIWYM-Editor (= Texteditor beliebiger Wahl) findet man nur im Ausnahmefall Buttons für die Textformatierung. Schriftgröße und -art werden üblicherweise in den Optionen des Editors eingestellt. Der gesamte eingegebene Text erscheint in einer gleichen Schriftgröße und -art (meist eine nüchterne Monospace-Schrift), lediglich durch Syntax-Hervorhebungen unterlegt\footnotemark{}.
+Dans un éditeur WYSIWYM (quel que soit l'éditeur de texte utilisé), les boutons de mise en forme du texte sont rares. La taille et le type de police sont généralement définis dans les options de l'éditeur. Tout le texte saisi apparaît avec la même taille et le même type de police (généralement une police à chasse fixe), avec uniquement la coloration syntaxique\footnotemark{}.
+
+%\footnotetext{Richtigerweise muß man ergänzen, daß es auch \TeX{}-Editoren wie LyX gibt, bei denen zwar Quellcode bearbeitet, aber ein teilformatiertes Ergebnis angezeigt wird. Diese Arbeitsweise kommt \TeX{}Einsteigern entgegen.}
+\footnotetext{Il convient d'ajouter qu'il existe également des éditeurs \TeX{} comme LyX, qui permettent de modifier le code source mais affichent un résultat partiellement formaté. Cette approche est plus adaptée aux débutants en \TeX{}.}
+
+%Da es im Quellcode sonst keine besondere Hervorhebung für die Dokumentstruktur oder Textformatierungen gibt, kann sich der Autor ganz auf den Inhalt des Dokuments konzentrieren. Er überläßt das Formatieren und Strukturieren, das Setzen und Layouten dem \TeX{}-System.
+Comme le code source ne met pas l'accent sur la structure du document ni sur la mise en forme du texte, l'auteur peut se concentrer entièrement sur le contenu. Il laisse la mise en forme, la structuration, la composition et la mise en page au système \TeX{}.
+
+%Der \TeX{}-Compiler setzt den Quellcode nicht einfach nur in Wörter und Absätze um, sondern wendet eine Reihe interner Satzregeln an (siehe unten), um den Text in möglichst gut lesbarer und ästhetischer Weise zusammenzustellen.
+Le compilateur \TeX{} ne se contente pas de traduire le code source en mots et en paragraphes, mais applique un certain nombre de règles de composition internes (voir ci-dessous) pour assembler le texte de la manière la plus lisible et esthétiquement agréable possible.
+
+%Wenn der Anwender in einer herkömmlichen Textverarbeitung permanent das Layout mit den Augen prüft und verändert, erhöht sich auch die Chance, daß Absatzvorlagen nicht konsequent eingehalten werden: Wie auch unter \TeX{} bietet eine herkömmliche Textverarbeitung wie LO Writer die Möglichkeit, den Text mithilfe von sog. Absatzvorlagen zu formatieren. So werden alle Überschriften derselben Ebene und auch der gesamte Brottext gleichartig (Schriftgröße, Schriftart, Farbe etc.) formatiert und wahlweise durchgängig numeriert. Problematisch wird es, wenn Absatzvorlagen ungenutzt bleiben oder das Fehlen ihrer Anwendung nicht bemerkt wird. Was sich im Fließtext vielleicht noch als unproblematisch erweist, könnte zu einer fehlerhaften Numerierung (auch im Inhaltsverzeichnis) der Überschriften führen. Möglich ist außerdem, daß verwaiste, also leere Absatzvorlagen zwischen den Absätzen stecken, z. B. eine Überschrift ohne Inhalt, sodaß im Inhaltsverzeichnis eine leere Zeile generiert wird. Konzeptbedingt hat sich der Anwender in einer herkömmlichen Textverarbeitung um all diese Dinge selbst zu kümmern\footnotemark{}.
+Lorsque les utilisateurs d'un traitement de texte traditionnel vérifient et modifient constamment la mise en page visuellement, le risque d'incohérences dans les styles de paragraphe augmente. À l'instar de \TeX{}, un traitement de texte traditionnel tel que LibreOffice Writer offre la possibilité de formater le texte à l'aide de styles de paragraphe. Ceci garantit que tous les titres de même niveau, ainsi que l'ensemble du corps du texte, sont formatés de manière uniforme (taille, type et couleur de police, etc.) et peuvent être numérotés consécutivement. Des problèmes surviennent lorsque les styles de paragraphe restent inutilisés ou que leur absence passe inaperçue. Ce qui peut sembler anodin dans le texte principal peut entraîner une numérotation incorrecte des titres (y compris dans la table des matières). Il est également possible que des styles de paragraphe orphelins, c'est-à-dire vides, soient laissés entre les paragraphes ; par exemple, un titre sans contenu peut créer une ligne vide dans la table des matières. De par leur conception, les utilisateurs d'un traitement de texte traditionnel doivent gérer eux-mêmes tous ces aspects\footnotemark{}.
+
+%\footnotetext{Kleine Erweiterungen wie der \texttt{Pepito Cleaner} (als Erweiterung für LibreOffice) prüfen abschließend das Dokument auf solche Unstimmigkeiten und geben eine Fehlerliste aus, die abgearbeitet werden kann.}
+\footnotetext{De petites extensions comme \texttt{Pepito Cleaner} (en tant qu'extension pour LibreOffice) vérifient le document à la recherche de telles incohérences et produisent une liste d'erreurs qui peut être traitée.}
+
+%Im Unterschied dazu sind derartige Fehler bei \TeX{} ausgeschlossen, oder zumindest nur mutwillig herbeizuführen: Allein durch die Arbeitsweise mit einer Befehlssyntax wird spätestens beim Kompilieren deutlich, wo Fehler gemacht worden sind (nämlich durch Ausgabe eines Protokolls, das auf fehlerhafte oder unbekannte Befehlssyntax hinweist). Dementsprechend wird die Erstellung des Dokuments erst dann fortgesetzt, wenn alle Fehler behoben sind. Unvollständig angewendete Absatzvorlagen gibt es daher nicht; auch bei der Numerierung von Überschriften, Fußnoten, Abbildungen usf. wird niemals etwas durcheinanderkommen (können).
+En revanche, de telles erreurs sont impossibles avec \TeX{}, ou du moins ne peuvent être introduites que délibérément : l’utilisation d’une syntaxe de commande seule permet de déceler les erreurs au plus tard lors de la compilation (grâce à un journal indiquant les syntaxes de commande incorrectes ou inconnues). Par conséquent, la création du document ne se poursuit qu’une fois toutes les erreurs corrigées. Ainsi, les styles de paragraphe appliqués de manière incomplète sont impossibles ; même la numérotation des titres, des notes de bas de page, des figures, etc., ne risque jamais d’être erronée.
+
+%Wenn sowohl in \TeX{} als auch in einer herkömmlichen Textverarbeitung Absatzvorlagen konsequent angewendet worden sind, ist es problemlos möglich, Formatierungsänderungen vorzunehmen: Alle Überschriften der 2. Ebene doch lieber in 16 pt, kursiv und in Grün? Kein Problem. - Das wäre nicht möglich, wenn der Anwender sich sein Layout selbst bauen würde, indem er beispielsweise manuell seine Überschriften numeriert und direkt beim Eingeben derselben eine Schriftgröße und -art festlegt.
+Si les styles de paragraphe ont été appliqués de manière cohérente à la fois dans \TeX{} et dans un traitement de texte classique, la mise en forme est simple : vous souhaitez que tous les titres de second niveau soient en 16 points, en italique et en vert ? Aucun problème. Cela serait impossible si l’utilisateur créait sa propre mise en page, par exemple en numérotant manuellement ses titres et en spécifiant directement la taille et le type de police au fur et à mesure de la saisie.
+
+%Zur Vollständigkeit sey auf Hybride wie Word Perfect verwiesen, das sich zunächst durchaus als herkömmliche Textverarbeitung bezeichnen läßt. Mithilfe eines Features namens reveal codes können allerdings neben dem WYSIWYG-Text sämtliche Formatierungscodes übersichtlich angezeigt, verstanden und manipuliert werden, die zum gegenwärtig sichtbaren Layout geführt haben.
+Par souci d'exhaustivité, il convient de mentionner l'utilisation de logiciels hybrides comme WordPerfect, qui peut être décrit initialement comme un traitement de texte classique. Cependant, grâce à une fonction appelée « afficher les codes », tous les codes de mise en forme ayant permis d'obtenir la mise en page visible peuvent être clairement affichés, compris et modifiés en même temps que le texte WYSIWYG.
+
+%\section{Anschaffungskosten}
+\section{Frais d'acquisition}
+
+%Unter den herkömmlichen Textverarbeitungen gibt es kommerzielle und freie. Unter den kommerziellen ist MS Word sicherlich die bekannteste. Selbstverständlich zahlt man auch für jedes Upgrade und ggf. auch für jeden Arbeitsplatz. Außerdem gibt es Unterschiede im Umfang, je nach Anwender (Studenten-Lizenz, Professionell). Neuerdings gibt es von MS Office auch ein Abo-Modell, was wiederum von einer bestehenden Internetverbindung abhängig macht (sofern man die angebundenen Cloud-Dienste nutzen möchte).
+Parmi les logiciels de traitement de texte traditionnels, il existe des versions commerciales et gratuites. MS Word est sans conteste le plus connu des logiciels commerciaux. Naturellement, chaque mise à jour et potentiellement chaque utilisateur sont payants. De plus, les fonctionnalités varient selon l'utilisateur (licence étudiante, licence professionnelle). Récemment, MS Office a également introduit un modèle d'abonnement, qui nécessite une connexion internet (pour utiliser les services cloud intégrés).
+
+%Freie (quelloffene) Textverarbeitungen (LibreOffice, Calligra-Suite, Abiword) und auch \TeX{} sind dagegen frei von Kosten zu beziehen, selbstverständlich auch alle Updates. Ebenso gibt es keine Einschränkungen hinsichtlich Anzahl der Arbeitsplätze oder ähnliches. Unter den WYSIWYM-Editoren (Texteditoren, \TeX{}-Editoren) gibt es ebenfalls solche mit freier und kommerzieller Lizenz.
+Les logiciels de traitement de texte libres (LibreOffice, Calligra Suite, Abiword) et \TeX{} sont également disponibles gratuitement, mises à jour comprises. De même, aucune restriction n'est imposée quant au nombre de postes de travail ou à d'autres limitations similaires. Parmi les éditeurs WYSIWYM (éditeurs de texte, éditeurs \TeX{}), certains sont proposés sous licence gratuite, d'autres sous licence commerciale.
+
+%\section{Technisches}
+\section{Technique}
+
+%In dieser Kategorie wird angenommen, daß das Textverarbeitungssystem auf dem heimischen Computer betrieben werden soll. Für beide Lager (herkömmliche Textverarbeitungsprogramme und \TeX{}) gibt es nämlich auch reine Online-Anwendungen, bei denen der Nutzer allein über den Browser auf seine Dokumente zugreift, und eine lokale Installation inklusive aller eventuellen Hardware-Fragen entfällt.
+Dans cette catégorie, on suppose que le système de traitement de texte doit être utilisé sur l'ordinateur personnel. Pour les deux camps (programmes de traitement de texte conventionnels et \TeX{}), il existe également des applications purement en ligne dans lesquelles l'utilisateur accède à ses documents uniquement via le navigateur et ne nécessite pas d'installation locale incluant tous les problèmes matériels possibles.
+
+\subsection{Speicherplatz}
+
+%Diese Kategorie ist bei heutigen Festplattengrößen eigentlich kein Thema mehr. Dennoch eine kurze Ausführung:
+Cette catégorie ne pose plus de problème avec les tailles de disques durs actuelles. Néanmoins une petite explication :
+
+%MS Office belegt in seiner aktuellen Version nicht unter 1 GB Speicherplatz; andere Textverarbeitungen wie LibreOffice sind je nach Installationsumfang genügsamer. Einfache Textverarbeitungsprogramme wie Abiword belegen gerade einmal wenige Megabyte.
+MS Office dans sa version actuelle n'occupe pas moins de 1 Go d'espace de stockage ; D'autres traitements de texte tels que LibreOffice sont plus économes en fonction de l'étendue de l'installation. Les programmes de traitement de texte simples comme Abiword n'occupent que quelques mégaoctets.
+
+%Den meisten Büro-Suiten ist gemein, daß sie sich modular installieren lassen, d. h. beim Installieren kann man die Komponenten der jeweiligen Office-Suite auswählen. Auch von einer aktuellen \TeX{}-Distribution wie TeXLive wird wenigstens ein Gigabyte Speicherplatz belegt, je nachdem, wie umfangreich sie installiert wird.
+Ce que la plupart des suites bureautiques ont en commun, c'est qu'elles peuvent être installées de manière modulaire, c'est-à-dire h. Lors de l'installation, vous pouvez sélectionner les composants de la suite bureautique respective. Même une distribution \TeX{} actuelle comme TeXLive occupe au moins un gigaoctet d'espace de stockage, selon l'étendue de son installation.
+
+%Hier unterscheidet sich eine \TeX{}-Distribution von einem herkömmlichen OfficeProgramm, denn sie läßt sich wesentlich modularer installieren; genau genommen kann man sich ein System mit nur denjenigen Komponenten zusammenstellen, die man wirklich benötigt. \TeX{} läßt sich also (bei Kenntnis der erforderlichen Pakete) besser an die Bedürfnisse des Nutzers anpassen, und belegt damit nicht unnötig Speicherplatz (insbesondere auf älteren Systemen!).
+C'est là qu'une distribution \TeX{} diffère d'un programme Office classique car elle peut être installée de manière beaucoup plus modulaire ; À proprement parler, vous pouvez créer un système avec uniquement les composants dont vous avez réellement besoin. \TeX{} peut donc être mieux adapté aux besoins de l'utilisateur (si les packages requis sont connus) et ne prend donc pas d'espace de stockage inutile (surtout sur les systèmes plus anciens !).
+
+%Bei \TeX{} kommt weiterhin ein Texteditor hinzu. Da es sich bei \TeX{}-Quellcode um reine Textdateien handelt, ist die Wahl des Texteditors unerheblich. Der Nutzer kann sich seine Arbeitsumgebung also frei wählen.
+\TeX{} est également livré avec un éditeur de texte. Puisque le code source de \TeX{} est constitué de purs fichiers texte, le choix de l'éditeur de texte n'a pas d'importance. L'utilisateur peut donc choisir librement son environnement de travail.
+
+%Die meisten modernen Texteditoren verstehen die Syntax von \TeX{}-Quellcode. Einige spezielle \TeX{}-Editoren bieten auch gleich alles an, was man für die Bearbeitung von \TeX{}-Dokumenten braucht, inklusive Anzeige der Dokumentstruktur bis hin zu Buttons für das Kompilieren. Andere Editoren (z. B. Atom, Visual Code oder Sublime) lassen sich mit Paketen nachrüsten, um das zu ermöglichen. Manche \TeX{}-Editoren generieren synchron zum Quellcode eine Vorschau des Dokuments (was aber dem Prinzip von WYSIWYM entgegendrängt). Für einen Texteditor fallen jedenfalls selten mehr als 50 MB zusätzlicher Speicherplatz an.
+La plupart des éditeurs de texte modernes comprennent la syntaxe du code source \TeX{}. Certains éditeurs \TeX{} spéciaux offrent également tout ce dont vous avez besoin pour éditer des documents \TeX{}, y compris l'affichage de la structure du document et des boutons pour la compilation. D'autres éditeurs (par exemple Atom, Visual Code ou Sublime) peuvent être équipés de packages pour rendre cela possible. Certains éditeurs \TeX{} génèrent un aperçu du document de manière synchrone avec le code source (mais cela va à l'encontre du principe du WYSIWYM). Dans tous les cas, un éditeur de texte nécessite rarement plus de 50 Mo d’espace de stockage supplémentaire.
+
+%\subsection{Prozessor, Arbeitsspeicher, Grafik}
+\subsection{Processeur, mémoire, graphiques}
+
+%Jede herkömmliche Textverarbeitung wie LO Writer oder MS Word hat den Nachteil, daß sie eine grafische Oberfläche (GUI) darstellt, und nicht, wie \TeX{}, wahlweise auch im reinen Textmodus, z. B. im Terminal-Fenster, betrieben werden kann. Dementsprechend benötigen erstgenannte einen modernen Prozessor, nicht zu wenig Arbeitsspeicher und manchmal auch etwas Unterstützung von der Grafikkarte, wenn alles flüssig laufen soll. Besonders MS Office scheint von Version zu Version optisch aufgeblasener zu werden (Transparenz, Schatten, Animationen in der GUI). Je mehr dieser optischen Spielereien verbaut sind, desto mehr werden Systemressourcen verbraucht und desto träger wird die Eingabe oder Verarbeitung von Text sein.
+Tout traitement de texte conventionnel tel que LO Writer ou MS Word présente l'inconvénient d'afficher une interface graphique (GUI) et non, comme \TeX{}, en mode texte pur, par ex. B. peut être utilisé dans la fenêtre du terminal. En conséquence, les premiers nécessitent un processeur moderne, pas trop peu de RAM et parfois un peu de soutien de la carte graphique pour que tout fonctionne correctement. MS Office en particulier semble devenir visuellement plus volumineux de version en version (transparence, ombres, animations dans l'interface graphique). Plus ces gadgets optiques sont installés, plus les ressources système sont utilisées et plus la saisie ou le traitement du texte sera lent.
+
+%Da, konzeptbedingt (Abschnitt 5), Wortumbrüche und Layout bei herkömmlichen Textverarbeitungen während der Eingabe berechnet werden (»Live-Text«) und nicht erst, wie bei \TeX{}, während des Kompilierens, wird ebenfalls vermehrt Prozessorleistung beansprucht als bei \TeX{}. \TeX{}-Quellcode läßt sich mit jedem beliebigen Computer öffnen und bearbeiten, und auf alten wie auf neuen Computern zu einem fertigen Dokument kompilieren (auch wenn es länger dauert). Eine bestimmte Abhängigkeit zu aktuellen Betriebssystemen besteht daher nicht.
+Puisque, en raison du concept (Section 5), les sauts de mots et la mise en page dans le traitement de texte conventionnel sont calculés lors de la saisie ("texte en direct") et pas seulement lors de la compilation, comme avec \TeX{}, plus de puissance de processeur est également requise qu'avec \TeX{}. Le code source de \TeX{} peut être ouvert et modifié sur n'importe quel ordinateur, et compilé dans un document fini sur les anciens et les nouveaux ordinateurs (même si cela prend plus de temps). Il n’y a donc pas de dépendance spécifique aux systèmes d’exploitation actuels.
+
+%\subsection{Betriebssystem}
+\subsection{Betriebssystem}
+
+%Bekannt ist, daß die Abwärtskompatibilität bei MS Word keine Priorität zu haben scheint, weder was das Dateiformat betrifft (Abschnitt 4.4), noch die Anwendung selbst. Ein modernes MS Office auf einem Windows 98 zu betreiben, ist unmöglich. Außerdem ist MS Office nicht für GNU/Linux verfügbar (kann aber emuliert werden). LibreOffice ist da einsichtiger und läßt sich auf nahezu jedem System mit grafischer Oberfläche installieren, ob nun Windows (ab XP), klassischem Desktop-Linux, BSD, Mac, Android, Solaris oder sonstwas. Auch einige andere Textverarbeitungsprogramme wie Abiword sind plattformübergreifend verfügbar.
+On sait que la rétrocompatibilité ne semble pas être une priorité avec MS Word, ni au niveau du format de fichier (Section 4.4) ni de l'application elle-même. Exécuter un MS Office moderne sur Windows 98 est impossible. De plus, MS Office n'est pas disponible pour GNU/Linux (mais peut être émulé). LibreOffice est plus compréhensible et peut être installé sur presque tous les systèmes dotés d'une interface graphique, que ce soit Windows (XP ou supérieur), Linux de bureau classique, BSD, Mac, Android, Solaris ou autre. Certains autres programmes de traitement de texte tels qu'Abiword sont également disponibles sur toutes les plateformes.
+
+%\TeX{} kann ebenfalls auf den meisten Betriebssystemen ausgeführt werden (Windows, Apple, GNU-Linux, OS/2, MS-DOS, OpenVMS, BeOS, Amiga u. a.). Selbst wenn eine \TeX{}-Distribution für ein bestimmtes Betriebssystem nicht verfügbar ist - der Quellcode läßt sich in jedem Fall bearbeiten.
+\TeX{} peut également fonctionner sur la plupart des systèmes d'exploitation (Windows, Apple, GNU-Linux, OS/2, MS-DOS, OpenVMS, BeOS, Amiga, etc.). Même si une distribution \TeX{} n'est pas disponible pour un système d'exploitation spécifique, le code source peut toujours être modifié.
+
+%\subsection{Dateiformat}
+\subsection{Dateiformat}
+
+%Das von MS Word verwendete Format .doc (und sein XML-Luftballon .docx) gelten weithin als Standard-Dateiformat zum Austausch von Textdokumenten. Nur sind sie kein Standard und sollten niemals einer sein. Bekannt ist, daß Word-Formate gar nicht gut auf Abwärtskompatibilität zu sprechen sind; daß sich unter Word 95 erstellte Dateien mit modernen Word-Versionen mitunter gar nicht mehr öffnen lassen. LayoutVeränderungen sind selbst zwischen nachfolgenden Word-Versionen möglich. Das Word-Format ist kein Format für Dokumente, die auch in ferner Zukunft noch lesbar sein sollen.
+Le format .doc utilisé par MS Word (et sa bulle XML .docx) est largement considéré comme le format de fichier standard pour l'échange de documents texte. Seulement, ils ne sont pas standards et ne devraient jamais l’être. Il est bien connu que les formats Word se prêtent mal à la rétrocompatibilité ; que les fichiers créés sous Word 95 ne peuvent parfois plus être ouverts avec les versions modernes de Word. Les modifications de mise en page sont possibles même entre les versions ultérieures de Word. Le format Word n’est pas un format pour des documents qui devraient encore être lisibles dans un avenir lointain.
+
+%Ein Standard ist dagegen das OpenDocument-Format. Textdokumente tragen die Dateierweiterung .odt. Es handelt sich um ein XML-basiertes und mit ZIP komprimiertes, offen dokumentiertes Format, das von einem internationalen Gremium (und nicht einem einzelnen Konzern) betreut wird. Es gilt mittlerweile als (berechtigter) Standard für die An- und Ablage von Textdateien. Im Gegensatz zum .docx-Format belegt es sogar geringfügig weniger Speicherplatz, da im .docx (das ebenfalls auf XML basiert) die XML-Syntax zwar technisch korrekt geschrieben, aber jedes einzelne Wort mit XML-Tags umklammert wird, anstatt, wie bei .odt, nur die Absätze. Das bläht dann die Dateigröße auf.
+En revanche, un standard est le format OpenDocument. Les documents texte portent l'extension de fichier .odt. Il s'agit d'un format XML, compressé au format ZIP et ouvertement documenté, géré par un organisme international (et non par une seule société). Il est désormais considéré comme un standard (légitime) pour la création et le stockage de fichiers texte. Contrairement au format .docx, il prend en réalité un peu moins d'espace de stockage, car dans .docx (qui est également basé sur XML), la syntaxe XML est techniquement écrite correctement, mais chaque mot est entouré de balises XML au lieu de simplement les paragraphes, comme avec .odt. Cela gonfle alors la taille du fichier.
+
+%Das Dateiformat von \TeX{}, also eine reine Textdatei mit der Endung .tex, ist das in diesem Vergleich vermutlich einfachste Dateiformat. Es kann mit jedem beliebigen Texteditor geöffnet und bearbeitet werden. Das gilt freilich auch für XML, das in .odt und .docx eingebettet ist! Es ist zu bedenken, daß reine Textformate mitunter die ältesten Austauschformate für digitale Texte sind, d. h. ein in den 1980er Jahren erstellter .tex-Code läßt sich (mit wenigen Anpassungen, ggf. einer korrigierten Zeichencodierung) auch heute noch lesen, und er wird auch noch in Jahrzehnten lesbar sein.
+Le format de fichier \TeX{}, c'est-à-dire un fichier texte pur avec la terminaison .tex, est probablement le format de fichier le plus simple de cette comparaison. Il peut être ouvert et modifié avec n'importe quel éditeur de texte. Bien entendu, cela s'applique également au XML, qui est intégré dans .odt et .docx ! Il convient de garder à l'esprit que les formats de texte pur comptent parmi les formats d'échange de textes numériques les plus anciens, c'est-à-dire h. Un code .tex créé dans les années 1980 peut encore être lu aujourd’hui (avec quelques ajustements, éventuellement un codage de caractères corrigé) et le sera toujours dans des décennies.
+
+%Hinzu kommen zwei weitere Vorzüge reiner Textdateien:
+%\begin{itemize}
+%  \item Da in .tex nur der reine Inhalt gespeichert wird, und nicht etwa Softwarespezifische Informationen, bleibt die Größe der Datei, selbst unkomprimiert, sehr klein. Bei Word-Dateien werden dagegen ggf. auch Vorgängerversionen des gleichen Dokuments gespeichert, Hardware-spezifische Informationen im Header u. a.
+%  \item Bei reinen Textdateien kann der Editor gelegentlich abstürzen, ohne daß gleich der Inhalt des gesamten Dokuments beschädigt werden muß. Sollte etwas bei komplexen Formaten wie .odt oder .docx beschädigt werden, kann die Datei ggf. nicht mehr eingelesen werden.
+%\end{itemize}
+Hinzu kommen zwei weitere Vorzüge reiner Textdateien:
+\begin{itemize}
+  \item Puisque seul le contenu pur est stocké dans .tex et non les informations spécifiques au logiciel, la taille du fichier, même non compressé, reste très petite. Avec les fichiers Word, en revanche, les versions précédentes du même document peuvent également être enregistrées, les informations spécifiques au matériel dans l'en-tête, etc.
+  \item Avec des fichiers texte pur, l'éditeur peut occasionnellement planter sans nécessairement endommager le contenu de l'ensemble du document. Si quelque chose est endommagé dans des formats complexes tels que .odt ou .docx, le fichier risque de ne plus pouvoir être lu.
+\end{itemize}
+
+%\subsection{Systemschriftarten}
+\subsection{Systemschriftarten}
+
+%Prinzipiell können sowohl herkömmliche Textverarbeitungen als auch \TeX{} die auf dem System installierten Schriftarten verwenden. \TeX{} selbst bringt Dutzende weitere Schriftarten mit, die über entsprechende Pakete eingebunden werden. Externe Schriftarten lassen sich mithilfe von X \TeX{} oder LuaTEX verwenden.
+En principe, les traitements de texte conventionnels et \TeX{} peuvent utiliser les polices installées sur le système. \TeX{} lui-même est livré avec des dizaines d'autres polices intégrées via des packages appropriés. Les polices externes peuvent être utilisées en utilisant \XeTeX{} ou \LuaTeX{}.
+
+%\subsection{Konfigurationsdateien}
+\subsection{Konfigurationsdateien}
+
+%Die das \TeX{}-Dokument betreffenden Einstellungen werden im Quellcode selbst hinterlegt; die Konfiguration des Texteditors wird separat in einer einfachen Text-Datei (config-Datei) gespeichert. Große Textverarbeitungen wie MS Word oder LO Writer verteilen ihre Programm-internen Einstellungen etwas unübersichtlich auf der Festplatte. Soll für eine Anzahl von Dokumenten dieselbe Konfiguration zur Verfügung stehen, kann die \TeX{}-Präambel in eine eigene Datei ausgelagert und in allen Dokumenten verlinkt werden. So modifiziert man sie nur noch an einer Stelle.
+Les paramètres affectant le document \TeX{} sont stockés dans le code source lui-même ; La configuration de l'éditeur de texte est enregistrée séparément dans un simple fichier texte (fichier de configuration). Les grands traitements de texte tels que MS Word ou LO Writer répartissent leurs paramètres de programme internes sur le disque dur d'une manière quelque peu confuse. Si la même configuration doit être disponible pour plusieurs documents, le préambule \TeX{} peut être déplacé vers un fichier séparé et lié dans tous les documents. Vous ne le modifiez donc qu’à un seul endroit.
+
+%\subsection{Die Sache mit den Bugs}
+\subsection{Die Sache mit den Bugs}
+
+%Komplexe Software wie LibreOffice oder MS Office enthalten selbstverständlich immer wieder Bugs, nicht umsonst gibt es Updates. Und ferner: Mit jeder neuen Version gibt es weitere Bugs und weitere Updates. Dieses ewige Hin und Her kennt jede Software. \TeX{} dagegen hat den Ruf, daß Bugs nur selten gefunden werden. Selbstverständlich besteht eine \TeX{}-Distribution aus vielen Paketen, die, selbstverständlich, auch hin und wieder von Bugs befreit oder mit neuen Funktionen ausgestattet werden. Sie entwickeln sich weiter oder veralten und sind dann nicht mehr mit anderen, aktuellen Paketen problemlos nutzbar. Wieder andere Pakete werden seit Jahren nicht mehr weiterentwickelt, ganz einfach, weil sie ausgereift und keine Bugs bekannt sind. Anwender, die einer Flut von Warnungen und Fehlern nach dem Kompilieren ihrer Dokumente gegenüberstehen, neigen gern dazu, auf Programmierfehler zu schließen. Üblicherweise handelt es sich aber um unachtsam gesetzten Code, d. h. Syntax-Fehler.
+Bien entendu, les logiciels complexes comme LibreOffice ou MS Office contiennent toujours des bugs, et les mises à jour ne sont pas disponibles pour rien. Et plus loin : avec chaque nouvelle version, il y a plus de bugs et plus de mises à jour. Chaque logiciel connaît cet éternel va-et-vient. \TeX{}, en revanche, a la réputation de trouver rarement des bogues. Bien entendu, une distribution \TeX{} se compose de nombreux packages, qui sont bien entendu occasionnellement débarrassés de bugs ou dotés de nouvelles fonctions. Ils évoluent ou deviennent obsolètes et ne peuvent alors plus être utilisés sans problème avec d’autres packages actuels. D'autres packages n'ont pas été développés depuis des années, simplement parce qu'ils sont matures et qu'il n'y a pas de bugs connus. Les utilisateurs confrontés à un flot d’avertissements et d’erreurs après avoir compilé leurs documents ont tendance à supposer des erreurs de programmation. Cependant, il s'agit généralement d'un code qui a été défini avec négligence, c'est-à-dire h. Erreur de syntaxe.
+
+%Der Bug-Anfälligkeit würde ich jedoch keine besondere Wertung in diesem Vergleich beimessen. Hier geht es um Funktionalität und Endergebnis, egal wie oft das Programm zwischendurch abstürzt.
+Cependant, je n'attacherais pas d'importance particulière à la susceptibilité aux bugs dans cette comparaison. Il s'agit de fonctionnalité et de résultat final, quelle que soit la fréquence à laquelle le programme plante entre les deux.
+
+%\section{Layout und Typographisches}
+\section{Layout und Typographisches}
+
+%Wie in Abschnitt 2 bereits angedeutet, kann man mit \TeX{} ohne viel Eingreifen einen Text erzeugen, der harmonisch aussieht und gut lesbar ist. Das hat nicht nur damit zu tun, daß \TeX{} die meisten Layout-Fragen selbst übernimmt (Satzspiegel-Größe etc.), sondern auch der Umbruch-Algorithmus anders funktioniert als bei einer Textverarbeitung wie MS Word oder LO Writer: Hier werden die Wörter nach Sprachvorgaben umgebrochen, die Zusammenstellung der Wörter und ihr Umbruch erfolgen meist auf Zeilenbasis, d. h. sobald ein Wort nicht mehr in die Zeile paßt, wird es umgebrochen oder auf die nächste Zeile verwiesen. Beim resultierenden Blocksatz können dann sehr unterschiedliche Ergebnisse herauskommen: Lücken reißende Wortabstände oder wenigstens ein unausgeglichener Grauwert der Seite sind keine Seltenheit.
+Comme déjà indiqué dans la section 2, vous pouvez utiliser \TeX{} pour créer un texte harmonieux et facile à lire sans trop d'intervention. Cela n'est pas seulement dû au fait que \TeX{} s'occupe lui-même de la plupart des problèmes de mise en page (taille de l'espace de type, etc.), mais aussi au fait que l'algorithme de retour à la ligne fonctionne différemment de celui d'un traitement de texte tel que MS Word ou LO Writer : ici, les mots sont enveloppés selon les spécifications du langage, la compilation des mots et leur retour à la ligne se font généralement sur une base de ligne, c'est-à-dire h. Dès qu'un mot ne rentre plus dans la ligne, il est renvoyé à la ligne suivante. Le texte justifié qui en résulte peut produire des résultats très différents : des écarts entre les mots ou au moins un niveau de gris déséquilibré sur la page ne sont pas rares.
+
+%Bei \TeX{} geschieht der Wortumbruch auf Absatzbasis (was auch nicht weiter verwundert, denn schließlich schreibt man einen Absatz erst zu Ende, ehe man ihn setzt): Während des Kompilierens wird der Absatz »analysiert« und der Absatz so gesetzt (und umgebrochen), daß alle Wortabstände gleichmäßig (über den gesamten Absatz) verteilt sind. Daraus resultiert ein einheitlicher Grauwert und der Effekt, daß Testpersonen denselben Text schöner und harmonischer finden, wenn er mit \TeX{} gesetzt worden ist.
+Avec \TeX{}, le retour à la ligne se fait sur la base d'un paragraphe (ce qui n'est pas surprenant, puisque vous finissez seulement d'écrire un paragraphe avant de le composer) : lors de la compilation, le paragraphe est "analysé" et le paragraphe est tapé (et interrompu) de telle manière que tout l'espacement des mots soit uniformément réparti (sur tout le paragraphe). Il en résulte une valeur de gris uniforme et l'effet selon lequel les sujets de test trouvent le même texte plus beau et plus harmonieux s'il a été tapé avec \TeX{}.
+
+%Wer ein paar optische Vergleiche zwischen Word und \LaTeX{} vorzieht, kann sich beispielsweise hier und hier umsehen. Dort gibt es Beispiele für Ligaturen, Zurichtung, Kapitälchen und mehr, jeweils im Vergleich zu Word.
+Si vous préférez quelques comparaisons visuelles entre Word et \LaTeX{}, vous pouvez jeter un œil ici et ici, par exemple. Il existe des exemples de ligatures, de rognage, de petites majuscules et plus encore, chacun comparé à Word.
+
+%Durch Hinzuladen des microtype-Pakets kann man durch Aktivierung weiterer typographischer Feinheiten den Grauwert noch erhöhen. So ist es möglich, den sog. optischen Randausgleich zu nutzen, bei dem Buchstaben mit viel Fleisch (V, W) oder Bindestriche, sofern sie am Zeilenende stehen, ein wenig nach außerhalb des Satzblocks verschoben werden. Damit werden »lückige Stellen« aufgefüllt. Das genannte Paket kann außerdem Wortzwischenräume und Kegelbreiten der Buchstaben leicht variieren, sodaß der Textblock noch ausgeglichener wirkt. Typisch sind solche Möglichkeiten für DTP-Programme, etwa das sog. hz-Programm, das heute in Adobe InDesign integriert ist.
+En ajoutant le package microtype, vous pouvez augmenter encore plus la valeur de gris en activant des détails typographiques supplémentaires. Il est donc possible d'utiliser ce qu'on appelle la compensation de marge optique, dans laquelle les lettres avec beaucoup de chair (V, W) ou les traits d'union, si elles se trouvent en fin de ligne, sont déplacées un peu en dehors du bloc de phrase. Cela comble les « lacunes ». Le package mentionné peut également faire varier légèrement les espaces entre les mots et la largeur des cônes des lettres, de sorte que le bloc de texte apparaisse encore plus équilibré. De telles options sont typiques des programmes de PAO, tels que le programme dit Hz, désormais intégré à Adobe InDesign.
+
+Auch in Textverarbeitungen wie LibreOffice sind solche typographischen Optimierungen möglich, teilweise abhängig von der Schriftart (beispielsweise die GraphiteVersion von Libertine, die den optischen Randausgleich unterstützt).
+
+Ein bedeutender Unterschied findet sich, wenn man die Stabilität des Layouts betrachtet: Ein mit \TeX{}-Quellcode geschriebenes Dokument wird, unabhängig vom Betriebssystem, der Hardware oder dem Drucker, zu jeder Zeit genau gleich aussehen. Das läßt sich von herkömmlicher Textverarbeitung nicht zwingend behaupten: Selbst das offene, gut dokumentierte OpenDocument-Format kann ein unterschiedliches Ergebnis liefern, je nachdem ob man dieselbe Datei mit LibreOffice, MS Office oder Calligra öffnet. Prinzipiell gelten OpenDocument-Dateien als »Layout-stabiler« im Vergleich zu Word-Dateien. Bei MS Word kommt dazu, daß das Layout des Dokuments vom installierten Druckertreiber abhängig sein kann, d. h. das gedruckte Dokument kann unterschiedlich aussehen, je nachdem, auf welchem Drucker es gedruckt wurde. Durch Kompatibilitätsprobleme kann es beim Öffnen mit anderen Textverarbeitung zum Verschieben von Bildern und Bildunterschriften oder einem anderen Wortumbruch kommen. Eine Lösung ist der Umweg über PDF.
+
+\subsection{Ligaturen und OpenType-Features}
+
+\subsubsection{Ligaturen}
+
+Durch Ligaturen an entsprechender Stelle erhöht sich die Lesbarkeit eines Textes. Ligaturen werden üblicherweise automatisch gesetzt, sowohl von \TeX{} als auch von herkömmlichen Textverarbeitungsprogrammen.
+Für den Ligaturen-Satz gibt es Regeln, die es zu prüfen gilt. Ob eine Ligatur gesetzt wird (werden darf), hängt von folgenden Aspekten ab:
+
+\begin{itemize}
+  \item Ligaturen müssen in der verwendeten Schriftart enthalten sein. Normal ausgebaute Antiqua und Serifenlose enthalten meist nur die Standard-Ligaturen3 fi und fl.
+  \item In serifenlosen Schriften stehen die Buchstaben üblicherweise so unabhängig, daß eine fehlende Ligatur nicht negativ ins Gewicht fällt.
+  \item Die Dokumentsprache entscheidet, welche und wie viele Ligaturen gesetzt werden dürfen: In englischer Sprache wird grundsätzlich jede verfügbare Ligatur gesetzt, im Deutschen wird an Wortfugen nach Regelung darauf verzichtet. Da eine manuell aufgelöste Ligatur nicht selten eine auffällige Lücke mitten ins Wort reißt, muß man abwägen, inwiefern man dieser Regelung folgen möchte. Vergleiche: \fbox{auf fällig vs. auffällig} und \fbox{Schilf insel vs. Schilfinsel} !
+\end{itemize}
+
+Mit einem lückenhaften Textblock hat man guter Typographie nicht unbedingt zugearbeitet.
+Soll eine Ligatur nicht gesetzt werden, muß sie manuell unterdrückt werden. Hierfür gibt es unter \TeX{} diverse Kommandos (das bekannteste ist Kauf\/haus) oder man kann Ligaturensatz dokumentweit abschalten. Es gibt auch Pakete, die Ligaturen überall dort unterbrechen, wo sie nach Regelung nicht angewendet werden darf (an Wortfugen). Bei einer herkömmlichen Textverarbeitung kommt es auf die verwendete Schriftart an: Manche sind so programmiert, daß sie automatisch Ligaturen ausgeben, bei anderen sind Ligaturen generell deaktiviert und müssen alle von Hand eingefügt werden.
+Ob man Deutsch oder Englisch schreibt, welche Schriftart man verwendet, welche Textart man setzt (Antiqua, Serifenlose, Fraktur) und welcher typographischen Schule man folgt - Ligaturen bedeuten für den Setzer stets erhöhte Aufmerksamkeit und ggf. Nachbearbeitung des Textes.
+
+3Je nach Schriftgruppe meint man mit »Standardligaturen« etwas anderes: In Antiqua-Schriften sind dies fi und fl, bei Gebrochenen Schriften kommen noch viele weitere dazu. In einer Frakturschrift gelten beispielsweise ch, ck und tz als sog. Zwangsligaturen und müssen immer gesetzt werden.
+
+\subsubsection{OpenType-Features}
+
+Viele modern ausgebaute Schriften enthalten sog. OpenType-Features wie alternative Buchstabenformen, kontextsensitive Ersetzungen oder sogar weitere Ziffernsätze (Versalziffern vs. Mediävalziffern, Tabellenziffern vs. Proportionalziffern).
+Unter \TeX{} müssen solche Spielereien erst separat aktiviert werden. Das geht z. B. mit \XeTeX{} und \LuaTeX{}. Bei MS Word findet sich ab Version 2013 eine entsprechende Funktionserweiterung im Zeichen-Dialog. Unter LibreOffice können derartige Features aktiviert werden (Anleitung), indem man die entsprechenden OpenTypeKürzel an die Schriftart setzt. Außerdem gibt es für LO Writer eine Erweiterung namens Typography toolbar, welche eine Werkzeugleiste einblendet, über die sämtliche OpenType-Funktionalitäten einer Schriftart verfügbar werden4.
+Wie bei den Ligaturen gilt: Die Verwendung dieser Möglichkeiten muß abgewogen erfolgen und hängt ab von Textinhalt, Schriftart usf.
+
+\subsection{Kapitälchen und Unterstreichungen}
+
+Je nach Schriftart sind im Glyphensatz echte Kapitälchen enthalten. Kapitälchen werden häufig und typographisch falsch durch Verkleinerung von Versalbuchstaben generiert: Herkömmliche Textverarbeitungen stellen diese Möglichkeit durch die Kapitälchen-Formatierung bereit, ohne darauf hinzuweisen, daß die verwendete Schriftart vielleicht gar keine Kapitälchen enthält. Werden Kapitälchen von \TeX{} angefordert, die in der Schriftart nicht enthalten sind, wird dies beim Kompilieren mit einer Warnung protokolliert.
+Was Unterstreichungen angeht, werden diese bei herkömmlichen Textverarbeitungen wie LO Writer durch die Unterlängen der Buchstaben gezogen. Obwohl Unterstreichungen für sich allein typographisch fragwürdig sind, ist die Durchschneidung der Unterlängen typographisch doppelt falsch. Je nach Paket werden Unterstreichungen bei \TeX{} dagegen unterhalb der Unterlängen der Buchstaben gesetzt.
+
+\subsection{Rechtschreibprüfung}
+
+Die »Rechtschreibprüfung« (Orthographie) entspricht sowohl bei herkömmlichen Textverarbeitungen als auch bei Text-Editoren einfach einem Abgleich der Wörter mit einer Whitelist. Ist das betreffende Wort nicht enthalten, wird es rot unterkringelt oder kann hinzugefügt werden. Der Umfang dieser Whitelist ist wenig von der Textverarbeitung abhängig; im Internet können derartige Wörterbücher (dictionaries, Datei-Endung .dic) heruntergeladen und in den Editor oder die Textverarbeitung einbezogen werden.
+
+4Diese Erweiterung arbeitet nur mit der Graphite-Version einer Schriftart zusammen, z. B. Libertine!
+
+Grammatikalische Unstimmigkeiten werden in einem Text-Editor üblicherweise nicht geprüft. Mithilfe eines Plug-Ins (z. B. LanguageTool) können sowohl in MS Word und auch LibreOffice die Wortstellung und -auswahl auf grammatikalische Richtigkeit geprüft werden. Auf eventuelle Beanstandungen ist allerdings kritisch einzugehen.
+
+\subsection{Formelsatz und Sonderzeichen}
+
+\TeX{} ist bekannt für seinen exzellenten Formelsatz beliebig umfangreicher und komplexer Formeln; spezielle, auf unterschiedliche Formelebenen abgestimmte Glyphengrößen helfen beim Setzen einer insgesamt harmonisch aussehenden Formel-Struktur.
+MS Word und LO Writer haben zwar auch eigenständige Formelsatz-Module, die aber v. a. bei großen und komplexen Formeln schnell an die Grenzen der ästhetischen Darstellung stoßen. Meistens werden für Hoch- und Tiefstellungen aller Art einfach die Glyphen der derzeitigen Schriftart skaliert, ohne daß sie auf gute Lesbarkeit in kleinen Größen optimiert sind; außerdem werden Zeichen oftmals enger zusammengepreßt als sie sollten. Da ich normalerweise keine komplexeren Formeln setze (außer durch Bruchstrich getrennte Terme), kann ich die Leistungsfähigkeit nur unzureichend beurteilen. Viele Anwender kritisieren auch eine auf amerikanische Maßstäbe getrimmte Formeldarstellung, die nicht immer allen Ansprüchen genügt. (Diesem Manko kann ggf. mit entsprechenden Paketen gegengesteuert werden.) Nicht unerwähnt soll sein, daß hochkomplexe Formeln im \TeX{}-Quellcode zu einem Gewirr aus Buchstaben und Zahlen ausarten können, in denen schnell die Übersicht verlorengeht. Spezielle Formelmodule wie das von LibreOffice zeigen dagegen direkt das Endergebnis (oder wahlweise den dahinterliegenden Code, der dann \TeX{} ähnelt), sodaß man stets die Übersicht behält und auf Veränderungen leichter einwirken kann.
+Was die Symbolvielfalt angeht, sind \TeX{} und herkömmliche Textverarbeitungen vergleichbar. Beide greifen zurück auf einen Fundus von speziellen Symbol-Schriftarten (oder, im Falle von \TeX{}, auf entsprechende Symbol-Pakete), sodaß sich jedes nur erdenkliche Zeichen darstellen lassen kann.
+\TeX{} ist darüber hinaus in der Lage, mithilfe von Paketen musikalische Noten oder chemische Strukturformeln (mit optimalen Abständen) zu setzen; etwas, das ich von keiner herkömmlichen Textverarbeitung kenne.
+
+\subsection{Zurichtung (Kerning)}
+
+Viele professionelle Schriftarten sind mit Tausenden Zurichtungspaaren ausgestattet, die den Textfluß bestimmter Buchstaben-Paare optimieren (z. B. die Unterschneidung der Buchstabenpaare T-a und V-o). In den meisten Textverarbeitungsprogrammen (LO, MS Office älter als 2010) sind nur ein Teil dieser Zurichtungstabellen ansprechbar. Mit der Nutzung von \XeTeX{} oder \LuaTeX{} kann dagegen der gesamte Umfang der OpenType-Schrift, darunter die vollständigen Zurichtungstabellen, ausgereizt werden. Eigene Tests (Zurichtungsvergleiche) zeigen, daß der Satz derselben Paare zuweilen besser in \TeX{} aussieht als in LO Writer oder MS Word.
+Selbstverständlich sind die Möglichkeiten der Zurichtung abhängig von der Anzahl programmierter Zurichtungspaare in der Schriftart. Eine schlecht zugerichtete Schriftart wird auch mit \TeX{} schlecht zugerichtet aussehen.
+
+\subsection{Glyphen-Stauchung und variable Wortabstände}
+
+\TeX{} erreicht seinen überzeugenden Textsatz teilweise durch Anwendung mikrotypographischer Feinheiten, etwa der (fast nicht sichtbaren) Stauchung von Glyphen oder der Variation von Wortabständen, die in jeder Zeile geringfügig variieren kann.
+Diese Features können beispielsweise durch Hinzuladen des microtype-Pakets (in seinen Standardeinstellungen) aktiviert werden. microtype gleicht den Text damit so aus, daß der Grauwert einer Seite erhöht wird. Abhängig von der verwendeten Schriftart und der Sprache (englischer Text mit kurzen Wörtern vs. deutscher Text mit langen, schlechter umbrechbaren Buchstabenschlangen) kann die Buchstabenstauchung mehr oder weniger auffällig sein und sollte dann deaktiviert werden (Option font expansion). Ich persönlich hielt das noch nie für notwendig und lade das Paket stets mit Standardoptionen in jedem Dokument.
+Um in einer herkömmlichen Textverarbeitung ein ausgeglichenes Satzbild zu erzeugen, bleibt oft nur das manuelle Verteilen von sog. weichen Trennstellen, die zu den Standard-Trennstellen nach Wörterbuch dazukommen. Eine umständliche Angelegenheit bei langen Texten.
+
+\subsection{Registerhaltigkeit}
+
+Die sog. Registerhaltigkeit ist ein in pdfLATEX fehlendes und häufig nachgefragtes Thema. Darunter versteht man die identische Zeilenhöhe auf gegenüberliegenden Seiten eines Blattes Papier. Das heißt, wenn man ein Blatt gegen das Licht hält, sollten die Grundlinien der Zeilen genau deckungsgleich sein.
+Nun ist es so, daß \TeX{} ein harmonisches Satzbild (gleichmäßige Verteilung der Textblöcke, Überschriften, Bildelemente etc.) über die gelegentlich freizügige Dehnung der strikten Registerhaltigkeit erreicht. Texte, die mit pdfLATEX gesetzt worden sind, können, müssen aber nicht registerhaltig sein.
+Dieser Umstand kann mehr oder weniger auffällig sein. Für mich ist dieses »Manko« so unbedeutend, daß ich nie versucht habe oder versuchen werde, meine Texte strikt registerhaltig zu setzen. Wer dennoch diesen Anspruch erhebt, der kann Pakete wie grid oder gridset verwenden, oder gleich seinen Quellcode mit ConTEXt setzen.
+
+Für alle, die nicht mit \TeX{} arbeiten und sich dennoch der Registerhaltigkeit sicher sein wollen, müssen zu einer der großen DTP-Programme wie InDesign oder QuarkXPress greifen.
+
+\subsection{Umfang der Dokumente}
+
+Beispiele für umfangreiche Dokumente gibt es viele: Handbücher, Abschlußarbeiten, Bücher, Zeitschriften mit separaten Beiträgen etc.
+Nicht selten ist es sinnvoll, das Dokument in einzelne Kapitel aufzutrennen. Bei Verwendung einer herkömmlichen Textverarbeitung geschieht dies häufig durch Anlage einzelner Textdokumente. Das Endergebnis wird dann in einem gemeinsamen PDF zusammengeführt.
+Handelt es sich aber um Abschnitte, die durch Querverweise, gemeinsame Literaturund Indexlisten oder ein Inhaltsverzeichnis aufeinander aufbauen und voneinander abhängen, muß sich der Anwender um deren Konsistenz und Korrektheit selbst bemühen. Gleiches gilt für eine evtl. durchgängige Numerierung von Bildunterschriften, Seitenzahlen, Überschriften-Nummern usw.
+Mit LibreOffice kann man dieser Problematik mit dem wenig bekannten »Globaldokument« (Dateiendung .odm) entgegnen, das als Header für beliebig viele Unterdateien fungiert, die z. B. als einzelne .odt-Dateien (Kapitel) in einem Ordner liegen. Jede der Dateien läßt sich einzeln bearbeiten, aber im Globaldokument sind alle zusammen sichtbar, mit einheitlicher Numerierung, Seitenzahl, gemeinsamen Inhaltsverzeichnis usw.
+Mit \TeX{} können auf dieselbe Weise Dokumente untereinander verkettet werden (Kommando input): Einzeln angelegte .tex-Dateien (= Kapitel) werden über eine globale .tex-Datei vereint. Beim Kompilieren werden die einzelnen Dateien zusammengefügt, Seitenzahlen, Abbildungsnumerierungen etc. korrekt gezählt und gesetzt. Die \TeX{}-internen Zähler und Automatismen arbeiten dabei so effizient, daß man im Endergebnis sicher sein kann, daß alle Querverweise, Literaturzitate und sonstiges, das dynamische Felder gebraucht, fehlerfrei sind. Und bei Unstimmigkeiten würde man während des Kompilierens mit einer ausgegebenen Warnung darauf hingewiesen.
+Diese Möglichkeit ist einer der Hauptgründe, weshalb ich die Arbeit mit einem \TeX{}-System bevorzuge.
+
+\subsection{Verlinkte Abbildungen}
+
+Einfacherweise werden bei illustrierten Textdokumenten die Bilder in die Datei eingebettet. Dadurch können die Dateien rasch eine Dateigröße annehmen, bei denen der Programmabsturz zu erwarten ist. Zumindest dürfte das Arbeiten mit dem Dokument stets träge reagieren. Hinzu kommt die Dauer für das Öffnen und Speichern der Datei. Sinnvoller ist hier das Verlinken der Bilder.
+In \TeX{}-Quellcode können, konzeptbedingt, Bilder nur verlinkt werden, denn es handelt sich um reine Textdateien, die keine Bilder aufnehmen können.
+In beiden Fällen ist die Verlinkung eines Bildes sinnvoll, denn sie bewahrt die volle Kontrolle über die Bild-Dateien: Obwohl auch innerhalb der Textverarbeitungen wie MS Word oder LO Writer eine nachträgliche Korrektur (Farbstich, Kontrast, Zuschnitt etc.) möglich ist, sollten sie extern verwaltet und bearbeitet werden. Da sie verlinkt sind, werden sie im (schlankeren) Dokument aktualisiert, sobald sie verändert wurden.
+\section{Was \TeX{} kann, und Textverarbeitungen nicht}
+
+\begin{itemize}
+  \item Möglichkeit, auch mit transparenten und übereinander angeordneten Schriftblöcken zu arbeiten. Ich gebe zu, daß mir keine sinnvolle Anwendung dafür einfällt.
+  \item Manuelle Trennstellen (weiche Trenner) für falsch umgebrochene Wörter lassen sich wesentlich einfacher setzen. Alternativ kann eine dokumentweit gültige Wortliste für häufig gebrauchte, sonst fehlerhaft umgebrochene Wörter angelegt werden.
+  \item Effizienter und verläßlicher Automatismus zum Erzeugen von Inhaltsverzeichnissen, Literaturverzeichnissen, bibliographischen Zitaten, Numerierung von Bildunterschriften, Indizes, Kopfzeilen etc. Derartigen Automatismen in einer herkömmlichen Textverarbeitung zu vertrauen, setzt eine einwandfreie Anwendung von Absatzvorlagen voraus. Ebenso verläßlich ist die Änderung von Absatzvorlagen mit \TeX{}. Hierbei wird der Vorteil des zusätzlichen Arbeitsschrittes (»Kompilieren« des Quellcodes) offenbart, denn dabei erfolgt die Prüfung, ob die eingegebene Syntax fehlerfrei ist und Sinn ergibt.
+  \item Die Eingabe von halben Leerzeichen, Geviertstrichen und anderen typographischen Kleinigkeiten erfordert nicht den Wechsel in die Glyphentabelle (und die Suche nach dem Zeichen), sondern ist direkt im Quellcode möglich, und zwar mit allen auf der Tastatur sichtbaren Zeichen (Standard-ASCII-Zeichen).
+  \item Programmierbarkeit nach eigenen Bedürfnissen, z. B.:
+  \begin{itemize}
+    \item Einrichtung einer Dokumentklasse, speziell für Geschäftsbriefe: Festlegung der Position von Brief-Inhalt, Anhangsliste, Absender-Feld, FirmenLogo, Falz- und Lochermarken. Einiges davon geht über die vertrauten Dokument-Vorlagen hinaus, die man von MS Word und LO Writer kennt.
+    \item Definition von Umgebungen und wiederkehrenden Wortbausteinen.
+  \end{itemize}
+  \item Kontrollgewinn/Transparenz des Dokuments: Durch das reine Textformat sehe ich stets, warum ein bestimmter Text diese oder jene Formatierung angenommen hat. Eine herkömmliche Textverarbeitung zeigt mir in der Tat nur das Ergebnis und verbirgt im Unsichtbaren, im Hintergrund, alle Informationen, die zu diesem Ergebnis geführt haben (insbesondere bei proprietären Dateiformaten). Es ist also möglich, daß in dem Dokument Informationen stehen, die ich am Bildschirm gar nicht sehen kann. \TeX{}-Quellcode zeigt mir dagegen immer an, was wirklich in der Datei enthalten ist: Ich weiß genau, mit welchem Zeichen die Datei beginnt, und mit welchem sie endet. Das gibt mir auch die Kontrolle, daß die Datei bei Weitergabe nur das enthält, was sie enthalten soll. Richtigerweise muß man hinzufügen, daß XML-basierte Dokumentformate selbstverständlich die Möglichkeit bieten, die zugrundeliegende .xml-Datei mit einem Texteditor zu öffnen und einzusehen. Auch hier wäre theoretisch jede Strukturierung und Formatierung, jede enthaltene Information sichtbar.
+  \item Vermeidung typographischer Fehler, z. B.:
+  \begin{itemize}
+    \item Im Quellcode doppelt (oder beliebig mehrfach!) eingegebene Leerzeichen werden nach dem Kompilieren auf ein einziges reduziert. Im fertigen PDF stößt man also nie auf zwei Wörter, die versehentlich durch zwei statt einem Leerzeichen spationiert worden sind (außer man erzwingt das mittels Befehlen). In LibreOffice kann man in den Autokorrektur-Optionen auch einstellen, daß doppelt eingegebene Leerzeichen ignoriert werden. Der bereits erwähnte Pepito Cleaner (als Erweiterung für LibreOffice) kann das Dokument am Ende nach doppelten Leerzeichen durchsuchen, oder man tut das mit der Suchen/Ersetzen-Funktion der Textverarbeitung.
+    \item Ein durch \TeX{} erzeugter Text kann nur diejenigen Schriftarten enthalten, die in der Präambel des Dokuments festgelegt wurden. Daß also das fertige PDF zwei sehr ähnlich aussehende Schriften5 nebeneinander enthält, ohne daß es weiter auffällt, ist nicht möglich. Dieses Szenario geschieht gelegentlich beim unsachgemäßen Kopieren von (vorformatierten) Text aus der Zwischenablage ins Dokument. Würde solcher Text aus der Zwischenablage in den \TeX{}a-Quellcode übertragen, wäre er gleichwertig mit dem bereits bestehenden Text. Eine Schriftart wird erst beim Kompilieren festgesetzt.
+    %\item 
+  \end{itemize} 
+  %\item 
+\end{itemize}
+
+%\begin{itemize}
+%  \item 
+%  \item 
+%  \item 
+%\end{itemize}
+
+- Die Nutzung des csquotes-Pakets vorausgesetzt, werden Anführungszeichen nicht mehr manuell eingegeben, sondern das Wort wird mit einem
+5beispielsweise zwei Garamonds, die sich alle recht ähnlich sehen Befehl eingeklammert. Nur am Dokumentanfang wird definiert, welche Form von Anführungszeichen verwendet werden sollen (deutsch/englisch, einfach/doppelt etc.). Beim Kompilieren werden diese nach Vorgabe gesetzt, und können ebenso einfach, dokumentweit!, ausgetauscht werden. Durch die Einklammerung ist außerdem ausgeschlossen, daß man versehentlich nur das eine Anführungszeichen setzt und das zweite vergißt.
+- Literaturverwaltung zusammen mit BibTEX bzw. BibLATEX: Literatur in einer Datenbank, eindeutige Schlüssel werden im Quellcode zitiert; verwaiste Zitate im Mengentext oder überflüssige Einträge im Literaturverzeichnis sind gar nicht möglich! Korrekte Sortierung der Einträge und einheitliche Formatierung werden durch Automatismen und einen ausgewählten, eindeutigen Zitierstil übernommen.
+· \TeX{}a »stürzt« so gut wie niemals ab, egal wie groß das Dokument wird oder wie alt das System ist.
+· Mit \TeX{}a erzeugter Text sieht immer identisch aus, egal auf welchem System man ihn kompiliert.
+· Der Editor zum Bearbeiten des \TeX{}a-Codes ist nach Vorlieben, Hardware und Gewöhnung frei wählbar. Dazu zählt auch, daß ich mir ein (augenschonendes) dunkles Farbthema einrichten kann, während ich bei herkömmlichen Textverarbeitungen auf vorinstallierte Designs angewiesen bin. Sie lassen bestenfalls eine Auswahl von Farbschattierungen der Buttons oder den Austausch der Symbole zu. Gleichwohl bleibt mir das weiße, grelle Blatt als Eingabefeld erhalten6.
+· Die verwendeten Kommandos zur Formatierung eines Textes sind seit Jahrzehnten weitgehend die gleichen. Daran werden auch neuere Versionen eines Editors nichts ändern. Hin und wieder bringt eine Paket-Aktualisierung auch einige neue Befehle mit sich und markiert andere als obsolet. Das ist aber in der Dokumentation ausführlich beschrieben und kann mit Alternativen entsprechend ausgeglichen werden.
+· Man kann auch ungewöhnliche Strukturen setzen, z. B. Musiknoten, Sternenkarten oder Schachbrett-Konstellationen. Für die Dokumentation von Quellcode (z. B. Code-Schnipsel im Rahmen eines Programm-Handbuchs) gibt es eigene Pakete, die Quellcode abgesetzt, mit einer Monospace-Schrift, SyntaxHervorhebung und Zeilennummern darstellen. Selbstverständlich kann man
+6Korrekt ist, auf spezielle Texteditoren für Vielschreiber hinzuweisen. Diese zeigen bedarfsweise eine Vollbild-Ansicht ganz ohne Buttons und wahlweise mit augenschonender Farbe von Hintergrund und Schrift.
+
+auch mit MS Word und LO Writer eine Absatzvorlage einrichten, bei der der Inhalt als Monospace mit Zeilennummern erscheint. Jedoch habe ich noch nie gesehen, daß damit auch die aus Texteditoren bekannte automatische Einrückung oder Syntax-Hervorhebung möglich wäre.
+· \TeX{}a-Code kann kommentiert werden, d. h. das Kommentar-Zeichen für diese Sprache (das Prozent-Zeichen) leitet Text ein, der nur im Editor sichtbar ist, nicht aber im kompilierten Ergebnis erscheint. Das eröffnet die Möglichkeit für die Hinterlegung von Bemerkungen (beliebiger Länge), wie bestimmte Befehle funktionieren oder gedacht sind; oder man »versioniert« seinen Text, indem man veraltete Passagen auskommentiert und so unsichtbar erhält. Oder man nutzt den Kommentar zum Ein-/Ausschalten alternativer Präambel-Befehle für Testzwecke. In einer herkömmlichen Textverarbeitung kann man zwar auch Kommentare anbringen, die dann als schwebende Farbboxen am Seitenrand erscheinen (sie erhalten sogar automatisch Erstellungszeit und Namen des Erzeugers); nachteilig bei diesen Boxen ist, daß sie nur begrenzt Text aufnehmen können.
+
+\section{Was Textverarbeitungen können, und \TeX{}a nicht}
+
+· Soll das Textdokument (nicht als PDF) weitergegeben werden, ist die Arbeit mit einer herkömmlichen Textverarbeitung einfacher: Über den Speichern-UnterDialog kann man eines von vielen gängigen Dateiformaten auswählen. Das .tex-Format sollte man dagegen nur an Leute weitergeben, die damit auch arbeiten können oder zumindest zur Nutzung eines Texteditors mit SyntaxHervorhebung bereit sind. Für die Konvertierung eines \TeX{}a-Quellcodes zu einem Dateiformat wie .docx oder .odt existieren diverse Programme (z. B. der Parser Pandoc), denen gemein ist, daß das Ergebnis fast immer einer Nachbearbeitung bedarf. Manchmal ist der Zwischenschritt über HTML besser, das wiederum von MS Word oder LO Writer eingelesen wird. Für den umgekehrten Weg gibt es beispielsweise die LibreOffice-Erweiterung Writer2LaTeX, über die ein mit einer herkömmlichen Textverarbeitung erstelltes Dokument für \TeX{}a aufbereitet werden kann. Editoren wie LyX haben eingebaute Encoder für den Export z. B. ins OpenDocument-Format.
+· Herkömmliche Textverarbeitungen legen nur eine Datei pro Dokument an. TEXQuellcode liegt zwar ebenfalls nur in einer einzigen Datei vor (sofern nicht aufgeteilt), aber beim Kompilieren entstehen daraus zahlreiche Metadateien, die Dokumentstruktur, Bibliographie etc. aufnehmen. Das kann den Arbeitsordner unordentlich werden lassen. Beim Archivieren gilt es daher alle Arbeitsdateien zu löschen, was einige \TeX{}a-Editoren auf Knopfdruck oder automatisch beim Schließen des Editors erledigen. Bei der Arbeit mit dem LyX-Editor entfällt dieser Punkt, denn es wird mit einer .lyx-Datei gearbeitet, die sich beim Kompilieren nicht »vermehrt«.
+· Herkömmliche Textverarbeitungen bringen direkt eine Verschlüsselungsfunktion für ihre Dateien, mit denen die Berechtigung zum Lesen und/oder Schreiben geregelt werden kann. \TeX{}a-Quellcode ist zunächst nicht verschlüsselt, sondern muß nachträglich über ein Drittprogramm verschlüsselt werden (z. B. verschlüsseltes ZIP-Archiv).
+· Wortzählung ist bei MS Word und LO Writer einfacher; hier genügt ein Klick auf den entsprechenden Button, oder die Anzahl wird direkt in der Statuszeile angezeigt. Die Wort-Zählung von \TeX{}a-Quellcode ist nicht so trivial, denn Kommando-Befehle (auch die Präambel) zählen nicht dazu. Verschiedene Editoren bieten eine Wortzählung an, die genau diese Befehlsstruktur »herausrechnet«, allerdings alle mit unterschiedlichem Ergebnis bei demselben Text (siehe hier). Bei Online-Editoren wird die Wortanzahl häufig in einer Statusleiste direkt angezeigt. Einige \TeX{}a-Editoren wie LyX können ebenfalls auf Knopfdruck die Wortstatistik ausgeben.
+· Absatzvorlagen oder individuelle Listen-Umgebungen sind für \TeX{}a-Anfänger nicht leicht programmierbar; das geht in einer herkömmlichen Textverarbeitung einfacher.
+· In MS Word/LO Writer ist die Anbindung einer Datenbank, z. B. für Serienbriefe, einfacher.
+· Das Einfügen von Tabellen, deren Ausrichtung, Sortierung, Gliederung, Formatierung (auch Textrichtung) ist in einer herkömmlichen Textverarbeitung wesentlich einfacher als in \TeX{}a. Dort wird eine komplexe Tabelle rasch zum undurchsichtigen Gewirr aus Befehlen und Text, und die Orientierung, in welcher Zelle man gerade etwas verändert, ist kaum nachvollziehbar7. Gleichwohl können sich Tabellen aus einer herkömmlichen Textverarbeitung mit solchen aus einem \TeX{}a-Quellcode ästhetisch nicht messen. Diverse \TeX{}a-Editoren wie LyX oder Kile enthalten Tabellen-Assistenten, die vieles vereinfachen, bei LyX sogar auf Knopfdruck Zeilen/Spalten löschen oder anlegen und Zellen verbinden können.
+7Als Einstieg könnte man die Tabelle mit der Tabellenverarbeitung Gnumeric vorbereiten und dann als \TeX{}a-Quellcode exportieren.
+· Das beliebte Feature »Änderungen nachverfolgen«, mit dem sich das Editieren des Dokuments durch Zweit- und Drittautoren nachverfolgen und dokumentieren läßt, kann in einer herkömmlichen Textverarbeitung bequemer bedient werden. Selbstverständlich ist so ein Vorgang in einem \TeX{}a-Dokument ebenso möglich (Paket changes)! Der \TeX{}a-Editor LyX enthält bereits eine Funktion für die Änderungsnachverfolgung, die sich genauso bequem bedienen läßt wie in einer großen Textverarbeitung. Andererseits bieten manche Online-\TeX{}a-Editoren Funktionen zur Zusammenarbeit an: Dokumente könnten geteilt, d. h. gleichzeitig daran gearbeitet werden; Kommentarboxen und vollzogene Änderungen lassen sich für andere hinterlegen usf.
+· Da man sich am fertigen Seitenlayout orientieren kann, ist das schnelle Korrigieren kleiner Textfehler einfacher. In Quellcode sucht man erfahrungsgemäß länger, um die zu korrigierende Stelle zu finden, insbesondere, wenn man sich an dem dazugehörigen PDF orientiert. Wer den \TeX{}a-Editor LyX nutzt, sieht bereits ein teilformatiertes Layout, mit dem sich genauso rasch und übersichtlich arbeiten läßt.
+
+\section{Was soll ich nun nehmen?}
+
+\subsection{Nimm \TeX{}a ...}
+
+\begin{itemize}
+  \item wenn es um typographisch und ästhetisch einwandfreien Textsatz geht,
+  \item wenn du komplexe Formeln setzen mußt, · wenn du dir keine Gedanken um die korrekte Numerierung (Überschriften, Bilder, Seitenzahlen) und Zuordnung von Verweisen (Bibliographie-Zitate!) machen willst. Manch einer wird schon Stunden in den manuellen Abgleich gesteckt haben, ob Textzitate zu den Einträgen der Literaturliste passen!
+\end{itemize}
+
+\subsection{Nimm eine herkömmliche Textverarbeitung ...}
+
+\begin{itemize}
+  \item wenn dir die Arbeit mit Quellcode-Syntax zu abgehoben ist (oder nimm LyX),
+  \item wenn du dir keinen Überblick über die Funktionalität der einzelnen \TeX{}a-Pakete
+verschaffen willst/kannst (oder nimm LyX),
+  \item wenn du sofort optisches Feedback für deine Eingaben brauchst, z. B. weiche
+Trennstellen (oder nimm LyX),
+\item wenn du viel mit Schriftarten experimentieren willst,
+\item wenn du komplexe Tabellen setzen mußt, die nicht in einem Tabellendokument
+abgelegt werden können (oder nimm LyX),
+\item wenn an deinem Dokument noch intensiv gearbeitet wird (wissenschaftliches Dokument mit mehreren Co-Autoren), und man sich intensiv auf »Änderungen nachverfolgen«, Kommentarboxen und dergleichen verläßt. Obwohl gerade dann die konsequente Anwendung von Absatzformatierungen kompliziert ist\footnotemark{}, wenn ständig Absätze und Bilder eingefügt und verschoben werden, und auch das endgültige Layout noch gar nicht klar ist (oder bestimmt werden darf, siehe Weitergabe des Manuskripts an den Verlag). Oder nimm LyX!
+\end{itemize}
+
+\footnotetext{Dokumentinterne Vorgaben wie Absatzvorlagen können beeinträchtigt werden, wenn das Dokument mit verschiedenen Programmversionen bearbeitet wird!}
+
+\end{document}
