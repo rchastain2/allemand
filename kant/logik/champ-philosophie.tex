@@ -1,0 +1,90 @@
+
+\documentclass[a5paper,12pt,landscape]{article}
+
+\usepackage[a5paper,margin=8mm,bmargin=16mm]{geometry}
+\usepackage[german,main=french]{babel}
+
+\usepackage{fontspec}
+\usepackage{microtype}
+
+\setmainfont{EBGaramond}
+[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lowercase,
+  Ligatures      = Discretionary,
+  Style          = Swash
+]
+% https://texnique.fr/osqa/questions/8423/lualatex-et-ligatures
+
+\usepackage{paracol}
+
+\newcommand\chunks[2]{%
+\begin{leftcolumn*}\begin{otherlanguage}{german}%
+{#1}%
+\end{otherlanguage}\end{leftcolumn*}%
+\begin{rightcolumn}\begin{otherlanguage}{french}%
+{#2}%
+\end{otherlanguage}\end{rightcolumn}%
+}
+% https://tex.stackexchange.com/a/505562/295527
+
+\begin{document}
+
+\thispagestyle{empty}
+\setlength{\columnsep}{8mm}
+\setlength{\columnseprule}{0.4pt}
+
+% https://korpora.org/kant/aa09/025.html
+
+% Zur Philosophie nach dem Schulbegriffe gehören zwei Stücke:
+% Was aber Philosophie nach dem Weltbegriffe (in sensu cosmico) betrifft:
+% Denn Philosophie in der letztern Bedeutung ist
+
+% Dans la philosophie selon sa notion scolastique, il faut faire deux parties :
+% Mais s'agissant de la philosophie selon son sens cosmique, on peut aussi l'appeler
+% Car la philosophie, en ce dernier sens, est
+
+\begin{paracol}{2}
+  %\chunks{\begin{center}
+  %        \textbf{Das Feld der Philosophie}
+  %        \end{center}}
+  %       {\begin{center}
+  %        \textbf{Le domaine de la philosophie}
+  %        \end{center}}
+  \chunks{\subsection*{Das Feld der Philosophie.}}
+         {\subsection*{Le domaine de la philosophie.}}
+  \chunks{Das Feld der Philosophie in dieser weltbürgerlichen Bedeutung läßt sich auf folgende Fragen bringen: 	  	  	 
+
+\begin{enumerate}
+  \item Was kann ich wissen?
+  \item Was soll ich thun?
+  \item Was darf ich hoffen?
+  \item Was ist der Mensch?
+\end{enumerate}
+
+Die erste Frage beantwortet die \emph{Metaphysik}, die zweite die \emph{Moral}, die dritte die \emph{Religion} und die vierte die \emph{Anthropologie}. Im Grunde könnte man aber alles dieses zur Anthropologie rechnen, weil sich die drei ersten Fragen auf die letzte beziehen.}
+         {Le domaine de la philosophie en ce sens cosmopolite se ramène aux questions suivantes :
+
+\begin{enumerate}
+  \item Que puis-je savoir ?
+  \item Que dois-je faire ?
+  \item Que m'est-il permis d'espérer ?
+  \item Qu'est-ce que l'homme ?
+\end{enumerate}
+
+À la première question répond la \emph{métaphysique}, à la seconde la \emph{morale}, à la troisième la \emph{religion}, à la quatrième l'\emph{anthropologie}. Mais au fond, on pourrait tout ramener à l'anthropologie, puisque les trois premières questions se rapportent à la dernière.}
+
+  \chunks{\begin{flushright}
+          \large\textsc{Kant}, \textit{Logik}.
+          \end{flushright}}
+         {\begin{flushright}
+          \large\textsc{Kant}, \textit{Logique}.
+          \end{flushright}}
+
+\end{paracol}
+
+\end{document}
