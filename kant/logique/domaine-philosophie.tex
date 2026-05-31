@@ -1,0 +1,82 @@
+
+\documentclass[a4paper,12pt]{article}
+
+% https://www.deutschestextarchiv.de/book/view/nietzsche_zarathustra01_1883?p=21
+
+\usepackage[a4paper,margin=8mm]{geometry}
+\usepackage[german,main=french]{babel}
+
+\usepackage{fontspec}
+\usepackage[letterspace=125]{microtype}% https://tex.stackexchange.com/a/17187/295527
+
+% https://texnique.fr/osqa/questions/8423/lualatex-et-ligatures
+%\setmainfont{EBGaramond}
+%[
+%  Extension      = .otf,
+%  UprightFont    = *-Regular,
+%  ItalicFont     = *-Italic,
+%  BoldFont       = *-Bold,
+%  BoldItalicFont = *-BoldItalic,
+%  Numbers        = Lowercase,
+%  Ligatures      = Discretionary,
+%  Style          = Swash
+%]
+
+%\setmainfont{Liberation Sans}
+%\setmainfont{TeX Gyre Pagella}
+%\setmainfont[Mapping=tex-text,Numbers=OldStyle]{Linux Libertine O}
+\setmainfont{Palatino Linotype}
+
+\usepackage{paracol}
+
+% https://tex.stackexchange.com/a/505562/295527
+\newcommand\chunks[2]{%
+\begin{leftcolumn*}\begin{otherlanguage}{german}%
+{#1}%
+\end{otherlanguage}\end{leftcolumn*}%
+\begin{rightcolumn}\begin{otherlanguage}{french}%
+{#2}%
+\end{otherlanguage}\end{rightcolumn}%
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+\setlength{\columnsep}{8mm}
+\setlength{\columnseprule}{0.4pt}
+
+\begin{paracol}{2}
+  \chunks{\begin{center}
+          \textbf{Das Feld der Philosophie}
+          \end{center}}
+         {\begin{center}
+          \textbf{Le domaine de la philosophie}
+          \end{center}}
+  
+  \chunks{Das Feld der Philosophie in dieser weltbürgerlichen Bedeutung läßt sich auf folgende Fragen bringen:}
+         {Le domaine de la philosophie en ce sens cosmopolite\footnotemark{} se ramène aux questions suivantes :}
+  \chunks{\begin{enumerate}
+  \item Was kann ich wissen?
+  \item Was soll ich tun?
+  \item Was darf ich hoffen?
+  \item Was ist der Mensch?
+\end{enumerate}}
+         {\begin{enumerate}
+  \item Que puis-je savoir ?
+  \item Que dois-je faire ?
+  \item Que m'est-il permis d'espérer ?
+  \item Qu'est-ce que l'homme ?
+\end{enumerate}}
+  \chunks{Die erste Frage beantwortet die Metaphysik, die zweite die Moral, die dritte die Religion, und die vierte die Anthropologie. Im Grunde könnte man aber alles dieses zur Anthropologie rechnen, weil sich die drei ersten Fragen auf die letzte beziehen.}
+         {À la première question répond la métaphysique, à la seconde la morale, à la troisième la religion, à la quatrième l'anthropologie. Mais au fond, on pourrait tout ramener à l'anthropologie, puisque les trois premières questions se rapportent à la dernière.}
+  
+  \chunks{\begin{flushright}
+          \large\textsc{Kant}, \textit{Logik}.
+          \end{flushright}}
+         {\begin{flushright}
+          \large\textsc{Kant}, \textit{Logique}.
+          \end{flushright}}
+  \footnotetext{Kant distingue la philosophie au sens \textit{cosmique} ou \textit{cosmopolite} de la philosophie au sens \textit{scolastique}.}
+\end{paracol}
+
+\end{document}
