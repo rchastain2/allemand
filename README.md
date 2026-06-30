@@ -1,8 +1,10 @@
 # Allemand
 
-Divers documents LaTeX en langue allemande, pour un cours d'allemand imaginaire.
+Choix de textes en langue allemande, pour un cours d'allemand imaginaire.
 
-- [Domaine de la philosophie](kant/logique/domaine-philosophie.pdf)
-- [Le judaïsme dans la musique](wagner/judaisme-musique.pdf)
-- [Le dernier homme](nietzsche/zarathoustra/dernier-homme.pdf)
-- [Prières catholiques](prieres.pdf)
+- [Heidegger et la technique moderne](heidegger/technique.pdf)
+- [Kant et le domaine de la philosophie](kant/logique/domaine-philosophie.pdf)
+- [Nietzsche et le dernier homme](nietzsche/zarathoustra/dernier-homme.pdf)
+- [Prières catholiques](gebete.pdf)
+- [Wagner et le judaïsme dans la musique](wagner/judaisme.pdf)
+- [Wer nur den lieben Gott lässt walten](wer-nur-den-lieben-gott.pdf)
