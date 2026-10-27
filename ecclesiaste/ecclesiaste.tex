@@ -1,0 +1,47 @@
+
+% https://tex.stackexchange.com/a/713700/295527
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=1.5cm,bottom=1.5cm,left=1.5cm,right=1.5cm]{geometry}
+
+\usepackage[latin,german,main=french]{babel}
+\AddBabelHook{espaces}{afterextras}{\frenchspacing}
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{paracol}
+\usepackage{lettrine}
+\usepackage{xcolor}
+
+\setmainfont{Alegreya}
+
+\begin{document}
+\thispagestyle{empty}
+\setlength{\columnsep}{5mm}
+\setlength{\columnseprule}{0.2pt}
+\colseprulecolor{gray}
+
+\begin{paracol}{3}
+% Vulgate
+\selectlanguage{latin}
+\noindent\lettrine[lines=2]{E}{st} malum quod vidi sub sole, quasi per errorem egrediens a facie principis : positum stultum in dignitate sublimi, et divites sedere deorsum. Vidi servos in equis, et principes ambulantes super terram quasi servos.
+\begin{flushright}\small Ecclesiastes 10, 5--7\end{flushright}
+\switchcolumn
+
+\selectlanguage{french}
+\noindent\lettrine[lines=2]{I}{l} y a un mal que j’ai vu sous le soleil, qui semble venir de l’erreur du prince : L’imprudent élevé dans une dignité sublime, et les riches assis en bas. J’ai vu les esclaves à cheval, et les princes marchant à pied comme des esclaves.
+\begin{flushright}\small Ecclésiaste 10, 5--7\end{flushright}
+\switchcolumn
+
+\selectlanguage{german}
+\noindent\lettrine[lines=2]{E}{s} gibt ein Übel, das ich unter der Sonne sah, wie ein Mißgriff, von einem Machthaber getan: Die Torheit ward auf große Höhen gestellt, und Reiche mußten unten bleiben. Ich sah Knechte auf Pferden, und Fürsten gingen wie Knechte zu Fuß.
+\begin{flushright}\small Prediger 10, 5--7\end{flushright}
+
+%Es gibt einen Übelstand, den ich unter der Sonne wahrgenommen habe, nämlich ein verfehltes Verfahren, das von einem Machthaber ausgeht: Toren werden auf große Höhe gestellt (=in die höchsten Würden eingesetzt), und Reiche (oder: Edle) müssen unten sitzen. Ich habe Sklaven hoch zu Roß gesehen und Fürsten wie Sklaven zu Fuß einhergehen.
+%
+%Doch kaum ein Übel ist - ich sah es unter dieser Sonne - so groß wie das Versehen eines Herrschers. Die Torheit wird zu hohen Stellungen erhoben, und Edle müssen in der Niedrigkeit verweilen. Zu Pferde sah ich Sklaven, und Fürsten gingen Sklaven gleich zu Fuß.
+%
+% Luther 1912
+%Es ist ein Unglück, das ich sah unter der Sonne, nämlich Unverstand, der unter den Gewaltigen gemein ist, daß ein Narr sitzt in großer Würde, und die Reichen hienieden sitzen. Ich sah Knechte auf Rossen und Fürsten zu Fuße gehen wie Knechte.
+\switchcolumn*
+\end{paracol}
+\end{document}

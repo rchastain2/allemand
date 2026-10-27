@@ -2,6 +2,7 @@
 
 Choix de textes en langue allemande, pour un cours d'allemand imaginaire.
 
+- [Ecclésiaste 10, 5-7 en trois langues](ecclesiaste/ecclesiaste.pdf)
 - [Eichendorff et le fainéant](eichendorff/taugenichts.pdf)
 - [Heidegger et la technique moderne](heidegger/technique.pdf)
 - [Kant et le domaine de la philosophie](kant/logique/domaine-philosophie.pdf)
