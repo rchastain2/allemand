@@ -7,4 +7,4 @@ all: $(TARGETS)
 	lualatex --jobname=$@ $<
 
 clean:
-	rm -rf *.aux *.log
+	rm -rf *.aux *.log *.toc *.out
