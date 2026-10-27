@@ -1,0 +1,67 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[a4paper,margin=16mm]{geometry}
+\usepackage[german,main=french]{babel}
+\usepackage{fontspec}
+\usepackage{microtype}
+
+\setmainfont{EBGaramond}
+[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lowercase
+]
+
+\usepackage{paracol}
+\newcommand\chunks[2]{%
+\begin{leftcolumn*}\begin{otherlanguage}{german}%
+{#1}%
+\end{otherlanguage}\end{leftcolumn*}%
+\begin{rightcolumn}\begin{otherlanguage}{french}%
+{#2}%
+\end{otherlanguage}\end{rightcolumn}%
+}
+
+\newcommand\strophe[1]{\subsection*{\normalsize\normalfont\itshape #1}}
+
+\begin{document}\thispagestyle{empty}
+\setlength{\columnsep}{8mm}
+
+
+\begin{paracol}{2}
+  \chunks{\section*{In meines Herzens Grunde}}
+         {\section*{Au fond de mon cœur}}
+
+  \chunks{\noindent\raggedright\small Valerius Herberger (1613), \textit{Valet will ich dir geben}}
+         {\noindent\raggedright\small Valerius Herberger (1613), \textit{Valet will ich dir geben}}
+
+  \chunks{\noindent\raggedright\small Johann Sebastian Bach, \textit{Johannes-Passion} (1724)}
+         {\noindent\raggedright\small Jean-Sébastien Bach, \textit{Passion selon saint Jean} (1724)}
+
+  \chunks{\strophe{Nr.~26 (Strophe 3)}
+          \begin{verse}
+          In meines Herzens Grunde\\
+          Dein Nam und Kreuz allein\\
+          Funkelt all Zeit und Stunde,\\
+          Drauf kann ich fröhlich sein.\\
+          Erschein mir in dem Bilde\\
+          Zu Trost in meiner Not,\\
+          Wie du, Herr Christ, so milde\\
+          Dich hast geblut’ zu Tod!
+          \end{verse}}
+         {\strophe{N\textsuperscript{o}~26 (strophe 3)}
+          \begin{verse}
+          Au fond de mon cœur,\\
+          Ton nom et ta croix seuls\\
+          Brillent en tout temps, à toute heure ;\\
+          Aussi puis-je être joyeux.\\
+          Apparais-moi sous l’image,\\
+          Pour me consoler dans ma détresse,\\
+          De toi, Seigneur Christ, qui, si doux,\\
+          As versé ton sang jusqu’à la mort !
+          \end{verse}}
+\end{paracol}
+\end{document}

@@ -2,9 +2,10 @@
 
 Choix de textes en langue allemande, pour un cours d'allemand imaginaire.
 
+- [Bach, In meines Herzens Grunde (Valerius Herberger)](bach/herzens-grunde.pdf)
+- [Bach, O Haupt voll Blut und Wunden (Paul Gerhardt)](bach/o-haupt.pdf)
 - [Ecclésiaste 10, 5-7 en trois langues](ecclesiaste/ecclesiaste.pdf)
 - [Eichendorff et le fainéant](eichendorff/taugenichts.pdf)
-- [Gerhardt, O Haupt voll Blut und Wunden](gerhardt/o-haupt.pdf)
 - [Heidegger et la technique moderne](heidegger/technique.pdf)
 - [Kant et le domaine de la philosophie](kant/logique/domaine-philosophie.pdf)
 - [Mozart, Dies Bildnis ist bezaubernd schön](mozart/bildnis.pdf)
