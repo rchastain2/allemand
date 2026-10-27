@@ -1,0 +1,156 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[a4paper,margin=16mm]{geometry}
+\usepackage[german,main=french]{babel}
+\usepackage{fontspec}
+\usepackage{microtype}
+
+\setmainfont{EBGaramond}
+[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lowercase
+]
+
+\usepackage{paracol}
+\newcommand\chunks[2]{%
+\begin{leftcolumn*}\begin{otherlanguage}{german}%
+{#1}%
+\end{otherlanguage}\end{leftcolumn*}%
+\begin{rightcolumn}\begin{otherlanguage}{french}%
+{#2}%
+\end{otherlanguage}\end{rightcolumn}%
+}
+
+\newcommand\strophe[1]{\subsection*{\normalsize\normalfont\itshape #1}}
+
+\begin{document}\thispagestyle{empty}
+\setlength{\columnsep}{8mm}
+
+\begin{paracol}{2}
+  \chunks{\section*{O Haupt voll Blut und Wunden}}
+         {\section*{Ô tête couverte de sang et de plaies}}
+
+  \chunks{\noindent\raggedright\small Paul Gerhardt (1656), nach \textit{Salve caput cruentatum}}
+         {\noindent\raggedright\small Paul Gerhardt (1656), d’après le \textit{Salve caput cruentatum}}
+
+  \chunks{\noindent\raggedright\small Johann Sebastian Bach, \textit{Matthäus-Passion} (1727)}
+         {\noindent\raggedright\small Jean-Sébastien Bach, \textit{Passion selon saint Matthieu} (1727)}
+
+  \chunks{\strophe{Nr.~15 (Strophe 5)}
+          \begin{verse}
+          Erkenne mich, mein Hüter,\\
+          Mein Hirte, nimm mich an!\\
+          Von dir, Quell aller Güter,\\
+          Ist mir viel Guts getan.\\
+          Dein Mund hat mich gelabet\\
+          Mit Milch und süßer Kost,\\
+          Dein Geist hat mich begabet\\
+          Mit mancher Himmelslust.
+          \end{verse}}
+         {\strophe{N\textsuperscript{o}~15 (strophe 5)}
+          \begin{verse}
+          Reconnais-moi, mon gardien,\\
+          Mon berger, accueille-moi !\\
+          De toi, source de tous les biens,\\
+          J’ai reçu beaucoup de bien.\\
+          Ta bouche m’a nourri\\
+          De lait et de doux aliments,\\
+          Ton esprit m’a comblé\\
+          De mainte joie céleste.
+          \end{verse}}
+
+  \chunks{\strophe{Nr.~17 (Strophe 6)}
+          \begin{verse}
+          Ich will hier bei dir stehen;\\
+          Verachte mich doch nicht!\\
+          Von dir will ich nicht gehen,\\
+          Wenn dir dein Herze bricht.\\
+          Wenn dein Herz wird erblassen\\
+          Im letzten Todesstoß,\\
+          Alsdenn will ich dich fassen\\
+          In meinen Arm und Schoß.
+          \end{verse}}
+         {\strophe{N\textsuperscript{o}~17 (strophe 6)}
+          \begin{verse}
+          Je veux me tenir ici près de toi ;\\
+          Ne me méprise donc pas !\\
+          Je ne veux pas te quitter\\
+          Quand ton cœur se brise.\\
+          Quand ton cœur pâlira\\
+          Sous le dernier coup de la mort,\\
+          Alors je veux te saisir\\
+          Dans mes bras, sur mon sein.
+          \end{verse}}
+
+  \chunks{\strophe{Nr.~54 (Strophen 1 und 2)}
+          \begin{verse}
+          O Haupt voll Blut und Wunden,\\
+          Voll Schmerz und voller Hohn,\\
+          O Haupt, zu Spott gebunden\\
+          Mit einer Dornenkron,\\
+          O Haupt, sonst schön gezieret\\
+          Mit höchster Ehr und Zier,\\
+          Jetzt aber hoch schimpfieret,\\
+          Gegrüßet seist du mir!
+          \end{verse}}
+         {\strophe{N\textsuperscript{o}~54 (strophes 1 et 2)}
+          \begin{verse}
+          Ô tête couverte de sang et de plaies,\\
+          Pleine de douleur et d’outrages,\\
+          Ô tête, par dérision ceinte\\
+          D’une couronne d’épines,\\
+          Ô tête, jadis bellement parée\\
+          D’honneur et de gloire suprêmes,\\
+          Mais à présent cruellement outragée,\\
+          Je te salue !
+          \end{verse}}
+
+  \chunks{\begin{verse}
+          Du edles Angesichte,\\
+          Dafür sonst schrickt und scheut\\
+          Das große Weltgewichte,\\
+          Wie bist du so bespeit;\\
+          Wie bist du so erbleichet!\\
+          Wer hat dein Augenlicht,\\
+          Dem sonst kein Licht nicht gleichet,\\
+          So schändlich zugericht’?
+          \end{verse}}
+         {\begin{verse}
+          Ô noble visage,\\
+          Devant qui tremblent d’effroi\\
+          Les grandes puissances du monde,\\
+          Comme te voilà couvert de crachats ;\\
+          Comme te voilà pâli !\\
+          Qui donc a la lumière de tes yeux,\\
+          Que nulle autre lumière n’égale,\\
+          Si honteusement meurtrie ?
+          \end{verse}}
+
+  \chunks{\strophe{Nr.~62 (Strophe 9)}
+          \begin{verse}
+          Wenn ich einmal soll scheiden,\\
+          So scheide nicht von mir,\\
+          Wenn ich den Tod soll leiden,\\
+          So tritt du denn herfür!\\
+          Wenn mir am allerbängsten\\
+          Wird um das Herze sein,\\
+          So reiß mich aus den Ängsten\\
+          Kraft deiner Angst und Pein!
+          \end{verse}}
+         {\strophe{N\textsuperscript{o}~62 (strophe 9)}
+          \begin{verse}
+          Quand un jour il me faudra partir,\\
+          Alors ne te sépare pas de moi ;\\
+          Quand il me faudra souffrir la mort,\\
+          Alors avance-toi !\\
+          Quand mon cœur sera\\
+          Au comble de l’angoisse,\\
+          Arrache-moi à mes angoisses\\
+          Par ton angoisse et ta peine !
+          \end{verse}}
+\end{paracol}
+\end{document}

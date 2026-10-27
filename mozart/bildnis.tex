@@ -1,0 +1,97 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[a4paper,margin=16mm]{geometry}
+\usepackage[german,main=french]{babel}
+\usepackage{fontspec}
+\usepackage{microtype}
+
+\setmainfont{EBGaramond}
+[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lowercase
+]
+
+\usepackage{paracol}
+\newcommand\chunks[2]{%
+\begin{leftcolumn*}\begin{otherlanguage}{german}%
+{#1}%
+\end{otherlanguage}\end{leftcolumn*}%
+\begin{rightcolumn}\begin{otherlanguage}{french}%
+{#2}%
+\end{otherlanguage}\end{rightcolumn}%
+}
+
+\newcommand\strophe[1]{\subsection*{\normalsize\normalfont\itshape #1}}
+
+\begin{document}\thispagestyle{empty}
+\setlength{\columnsep}{8mm}
+
+
+\begin{paracol}{2}
+  \chunks{\section*{Dies Bildnis ist bezaubernd schön}}
+         {\section*{Ce portrait est beau à ravir}}
+
+  \chunks{\noindent\raggedright\small Wolfgang Amadeus Mozart, \textit{Die Zauberflöte}}
+         {\noindent\raggedright\small Wolfgang Amadeus Mozart, \textit{La Flûte enchantée}}
+
+  \chunks{\noindent\raggedright\small Libretto von Emanuel Schikaneder (1791)}
+         {\noindent\raggedright\small Livret d’Emanuel Schikaneder (1791)}
+
+  \chunks{\strophe{Erster Aufzug, vierter Auftritt, Nr.~3, Arie}}
+         {\strophe{Premier acte, quatrième scène, n\textsuperscript{o}~3, air}}
+
+  \chunks{\noindent\small(Tamino ist gleich beim Empfang des Bildnisses aufmerksam geworden; seine Liebe nimmt zu, ob er gleich für alle diese Reden taub schien.)}
+         {\noindent\small(Dès qu’il a reçu le portrait, Tamino l’a contemplé attentivement ; son amour grandit, bien qu’il ait paru sourd à tous ces discours.)}
+
+  \chunks{\begin{verse}
+          \textsc{Tamino}\\[\medskipamount]
+          Dies Bildnis ist bezaubernd schön,\\
+          Wie noch kein Auge je gesehn!\\
+          Ich fühl’ es, wie dies Götterbild\\
+          Mein Herz mit neuer Regung füllt.
+          \end{verse}}
+         {\begin{verse}
+          \textsc{Tamino}\\[\medskipamount]
+          Ce portrait est beau à ravir,\\
+          Comme aucun œil n’en vit jamais !\\
+          Je sens comme cette image divine\\
+          Emplit mon cœur d’un émoi nouveau.
+          \end{verse}}
+
+  \chunks{\begin{verse}
+          Dies Etwas kann ich zwar nicht nennen,\\
+          Doch fühl’ ich’s hier wie Feuer brennen;\\
+          Soll die Empfindung Liebe sein?\\
+          Ja, ja! die Liebe ist’s allein.
+          \end{verse}}
+         {\begin{verse}
+          Ce je-ne-sais-quoi, je ne puis le nommer,\\
+          Mais je le sens ici brûler comme un feu ;\\
+          Ce sentiment serait-il l’amour ?\\
+          Oui, oui ! c’est l’amour, lui seul.
+          \end{verse}}
+
+  \chunks{\begin{verse}
+          O wenn ich sie nur finden könnte!\\
+          O wenn sie doch schon vor mir stände!\\
+          Ich würde\,\dots{} würde\,\dots{} warm und rein\,\dots{}\\
+          Was würde ich?\\
+          Ich würde sie, voll Entzücken,\\
+          An diesen heißen Busen drücken,\\
+          Und ewig wäre sie dann mein.
+          \end{verse}}
+         {\begin{verse}
+          Oh, si seulement je pouvais la trouver !\\
+          Oh, si elle se tenait déjà devant moi !\\
+          Je\,\dots{} je\,\dots{} avec ardeur et pureté\,\dots{}\\
+          Que ferais-je ?\\
+          Je la presserais, ravi,\\
+          Contre ma poitrine brûlante,\\
+          Et elle serait alors à moi pour toujours.
+          \end{verse}}
+\end{paracol}
+\end{document}
