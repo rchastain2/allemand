@@ -11,3 +11,5 @@ Choix de textes en langue allemande, pour un cours d'allemand imaginaire.
 - [Prières catholiques](gebete.pdf)
 - [Wagner et le judaïsme dans la musique](wagner/judaisme.pdf)
 - [Wer nur den lieben Gott lässt walten](wer-nur-den-lieben-gott.pdf)
+
+Voir aussi les [suggestions de textes](suggestions.md) à ajouter.
