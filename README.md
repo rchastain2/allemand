@@ -2,6 +2,7 @@
 
 Choix de textes en langue allemande, pour un cours d'allemand imaginaire.
 
+- [Eichendorff et le fainéant](eichendorff/taugenichts.pdf)
 - [Heidegger et la technique moderne](heidegger/technique.pdf)
 - [Kant et le domaine de la philosophie](kant/logique/domaine-philosophie.pdf)
 - [Nietzsche et le dernier homme](nietzsche/zarathoustra/dernier-homme.pdf)

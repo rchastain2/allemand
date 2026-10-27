@@ -1,0 +1,106 @@
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[a4paper,margin=8mm,bmargin=16mm]{geometry}
+\usepackage[german,main=french]{babel}
+
+\usepackage{fontspec}
+\usepackage{microtype}
+
+\setmainfont{EBGaramond}
+[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lowercase,
+  Ligatures      = Discretionary,
+  Style          = Swash
+]
+% https://texnique.fr/osqa/questions/8423/lualatex-et-ligatures
+
+\usepackage{paracol}
+\newcommand\chunks[2]{%
+\begin{leftcolumn*}\begin{otherlanguage}{german}%
+{#1}%
+\end{otherlanguage}\end{leftcolumn*}%
+\begin{rightcolumn}\begin{otherlanguage}{french}%
+{#2}%
+\end{otherlanguage}\end{rightcolumn}%
+}
+% https://tex.stackexchange.com/a/505562/295527
+
+\begin{document}
+
+\thispagestyle{empty}
+\setlength{\columnsep}{8mm}
+\setlength{\columnseprule}{0.4pt}
+
+\begin{paracol}{2}
+  \chunks{\begin{center}
+          \textbf{Aus dem Leben eines Taugenichts}
+          \end{center}}
+         {\begin{center}
+          \textbf{Épisode de la vie d’un fainéant}
+          \end{center}}
+         
+  \chunks{Das Rad an meines Vaters Mühle brauste und rauschte schon wieder recht lustig, der Schnee tröpfelte emsig vom Dache, die Sperlinge zwitscherten und tummelten sich dazwischen; ich saß auf der Türschwelle und wischte mir den Schlaf aus den Augen; mir war so recht wohl in dem warmen Sonnenscheine. Da trat der Vater aus dem Hause; er hatte schon seit Tagesanbruch in der Mühle rumort und die Schlafmütze schief auf dem Kopfe, der sagte zu mir: „Du Taugenichts! da sonnst du dich schon wieder und dehnst und reckst dir die Knochen müde und läßt mich alle Arbeit allein tun. Ich kann dich hier nicht länger füttern. Der Frühling ist vor der Tür, geh auch einmal hinaus in die Welt und erwirb dir selber dein Brot.“ – „Nun“, sagte ich, „wenn ich ein Taugenichts bin, so ists gut, so will ich in die Welt gehen und mein Glück machen.“ Und eigentlich war mir das recht lieb, denn es war mir kurz vorher selber eingefallen, auf Reisen zu gehen, da ich die Goldammer, welche im Herbst und Winter immer betrübt an unserm Fenster sang: „Bauer, miet mich, Bauer, miet mich!“ nun in der schönen Frühlingszeit wieder ganz stolz und lustig vom Baume rufen hörte: „Bauer, behalt deinen Dienst!“}
+         {La roue du moulin de mon père avait déjà repris sa course retentissante ; la neige, en fondant, découlait du toit goutte à goutte ; les moineaux se croisaient et s’appelaient dans l’air ; et moi, assis sur le seuil de la porte, je frottais mes yeux encore appesantis par le sommeil et je me délectais à la douce chaleur du soleil. Tout à coup, mon père qui, depuis la pointe du jour, n’avait cessé d’aller et de venir, comme un homme qui a mis son bonnet de travers, sortit du moulin et m’apostrophant : « Allons, fainéant\footnote{L’épithète infligée à son fils par ce père irrité et qui, dans l’original, sert de titre à la Nouvelle, est : « Taugenichts », dont la traduction littérale nous donnerait « vaurien ». Mais ce dernier mot a, dans notre langue, une signification beaucoup trop énergique ; je n’ai donc pas cru devoir l’adopter et l’on verra, par la lecture de cet épisode, que notre héros est un fainéant, un bon à rien, si l’on veut, mais qu’un père français ne pourrait l’appeler un « vaurien ». (\emph{Note du traducteur.})}, te voilà encore à te prélasser et à te détirer les membres. C’est là ta seule besogne, tandis que tu me laisses faire tout l’ouvrage. Mais je ne veux pas t’engraisser ici plus longtemps ; et puisqu’aussi bien voici le printemps revenu, c’est le moment de te lancer dans le monde et d’y gagner toi-même ton pain. » --- « Soit ! répliquai-je, puisque je suis un fainéant, j’irai courir le monde et peut-être y ferai-je fortune. » Au fond, j’étais ravi de cet incident : car depuis quelque temps, je roulais dans ma tête des projets de voyage, à l’exemple d’un loriot qui, pendant l’automne et l’hiver, avait chanté tristement devant notre fenêtre où il semblait dire : « Paysan, prends-moi à ton service ; » mais qui, depuis le retour du gai printemps, avait repris toute sa fierté et, joyeusement perché sur l’arbre voisin, chantait à plein gosier : « Paysan, garde ton ouvrage. »}
+  \chunks{Ich ging also in das Haus hinein und holte meine Geige, die ich recht artig spielte, von der Wand, mein Vater gab mir noch einige Groschen Geld mit auf den Weg, und so schlenderte ich durch das lange Dorf hinaus. Ich hatte recht meine heimliche Freude, als ich da alle meine alten Bekannten und Kameraden rechts und links, wie gestern und vorgestern und immerdar, zur Arbeit hinausziehen, graben und pflügen sah, während ich so in die freie Welt hinausstrich. Ich rief den armen Leuten nach allen Seiten stolz und zufrieden Adjes zu, aber es kümmerte sich eben keiner sehr darum. Mir war es wie ein ewiger Sonntag im Gemüte. Und als ich endlich ins freie Feld hinauskam, da nahm ich meine liebe Geige vor und spielte und sang, auf der Landstraße fortgehend:
+\begin{verse}
+Wem Gott will rechte Gunst erweisen,\\
+Den schickt er in die weite Welt,\\
+Dem will er seine Wunder weisen\\
+In Berg und Wald und Strom und Feld.
+
+Die Trägen, die zu Hause liegen,\\
+Erquicket nicht das Morgenrot,\\
+Sie wissen nur vom Kinderwiegen,\\
+Von Sorgen, Last und Not um Brot.
+
+Die Bächlein von den Bergen springen,\\
+Die Lerchen schwirren hoch vor Lust,\\
+Was sollt ich nicht mit ihnen singen\\
+Aus voller Kehl und frischer Brust?
+
+Den lieben Gott laß ich nur walten;\\
+Der Bächlein, Lerchen, Wald und Feld\\
+Und Erd und Himmel will erhalten,\\
+Hat auch mein Sach aufs best bestellt!
+\end{verse}}
+         {J’entrai donc dans la maison, je détachai de la muraille mon violon dont je jouais assez joliment, et, la poche garnie de quelque menue monnaie que mon père me donna pour la route, je me mis à descendre, en flânant, la longue rue du village. J’éprouvais, à vrai dire, une joie secrète de voir, à droite et à gauche, toutes mes vieilles connaissances, tous mes camarades, se rendant au travail, qui à la charrue, qui à la bêche, comme ils l’avaient fait la veille, l’avant-veille et toujours, tandis que, moi, j’allais courir le monde en liberté. Je croyais voir devant moi un dimanche sans fin. Aussi, à peine arrivé en pleine campagne, je saisis mon violon et, tout en suivant la grande route, je chantai en m’accompagnant :
+
+\begin{verse}
+Celui que Dieu veut favoriser,\\
+Il le lance dans le vaste univers,\\
+Il étale à ses yeux les merveilles\\
+Des bois, des montagnes, des fleuves et des plaines.
+
+Les êtres passifs qui restent à la maison\\
+Ne jouissent pas du lever de l’aurore ;\\
+Ils ne s’occupent que du berceau de leurs enfants,\\
+Des soins et des soucis qu’amène le pain de chaque jour.
+
+Les ruisseaux s’élancent des collines ;\\
+Les alouettes planent joyeusement dans les airs ;\\
+Pourquoi ne chanterais-je pas, comme elles,\\
+À plein gosier, et à pleine poitrine ?
+
+Je m’abandonne à la Providence.\\
+Dieu, qui prend soin des ruisseaux, des alouettes,\\
+Des bois, des plaines, du ciel et de la terre\\
+A, sans doute, arrangé pour le mieux ma destinée !
+\end{verse}}
+
+  \chunks{\begin{flushright}
+          \large\textsc{Eichendorff}, \textit{Aus dem Leben eines Taugenichts}.
+          \end{flushright}}
+         {\begin{flushright}
+          \large\textsc{Eichendorff}, \textit{Épisode de la vie d’un fainéant}.\par
+          \normalsize Traduction de Félix Legras.
+          \end{flushright}}
+
+\end{paracol}
+
+\end{document}
