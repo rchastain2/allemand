@@ -10,12 +10,20 @@ luther-des-juifs.tex
     Les coupures dans le texte sont marquées par \textelp{}.
     Texte allemand modernisé : document anonyme publié sur le web (reprenant
     peut-être une édition du XXe siècle, à vérifier), sauf les passages de WA 53,
-    p. 417, 419, 426-427, 432, 444, 448 et 515, modernisés d’après WA 53.
+    p. 417, 419, 426-427, 432, 444, 447-450, 481-483 et 515, modernisés d’après WA 53.
     Compilation : make (lualatex).
 
 glossaire.inc
     Note sur la traduction (glossaire), incluse à la fin de luther-des-juifs.tex.
     Extension .inc pour que make ne la compile pas seule.
+
+plan.md
+    Plan du traité (parties et points, d'après Savy), avec titres français
+    et allemands, pages de WA 53 et extraits correspondants.
+
+citations.md
+    Citations de Luther relevées au fil du travail, avec texte original,
+    traduction et référence exacte.
 
 ecarts-honigmann.md
     Écarts relevés dans la traduction Honigmann, passage par passage, chacun
