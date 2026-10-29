@@ -11,9 +11,9 @@ Le texte de 1543 est continu et ne comporte aucun titre. Le découpage suit celu
 | I.3 | La Loi | Das Gesetz | 439-446 | note 68, p. 71 | 444 |
 | I.4 | Le pays, la ville et le Temple | Land, Stadt und Tempel | 446-449 | note 89, p. 79 | 447-448, 448 |
 | II | Le Messie | Der Messias | 449-511 | note 98, p. 82 | 449 |
-| II.1 | Genèse 49 : le sceptre de Juda | 1. Mose 49: das Zepter Judas | 450-462 | | |
+| II.1 | Genèse 49 : le sceptre de Juda | 1. Mose 49: das Zepter Judas | 450-462 | | 450, 456, 457, 461 |
 | II.2 | 2 Samuel 23 : les dernières paroles de David | 2. Samuel 23: die letzten Worte Davids | 462-476 | | |
-| II.3 | Aggée 2 | Haggai 2 | 476-484 | | 481, 482, 482-483, 483 |
+| II.3 | Aggée 2 | Haggai 2 | 476-484 | | 476, 477, 478, 479, 480, 481, 482, 482-483, 483 |
 | II.4 | Daniel 9 : les soixante-dix semaines | Daniel 9: die siebzig Wochen | 484-511 | | 502 |
 | III | Les calomnies contre Jésus et Marie | Die Lästerungen gegen Jesus und Maria | 511-522 | note 308, p. 151 | 511-512 à 522 (« Aus diesem allen… ») |
 | IV | Ce qu'il faut faire des Juifs | Was mit den Juden zu tun ist | 522-541 | note 347, p. 164 | 522 (« Was wollen wir Christen… ») à 541 |

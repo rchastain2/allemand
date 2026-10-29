@@ -10,7 +10,7 @@ luther-des-juifs.tex
     Les coupures dans le texte sont marquées par \textelp{}.
     Texte allemand modernisé : document anonyme publié sur le web (reprenant
     peut-être une édition du XXe siècle, à vérifier), sauf les passages de WA 53,
-    p. 417, 419, 426-427, 432, 444, 447-450, 481-483 et 515, modernisés d’après WA 53.
+    p. 417, 419, 426-427, 432-433, 444, 447-450, 456-457, 461, 476-483, 502 et 515, modernisés d’après WA 53.
     Compilation : make (lualatex).
 
 glossaire.inc
@@ -24,6 +24,10 @@ plan.md
 citations.md
     Citations de Luther relevées au fil du travail, avec texte original,
     traduction et référence exacte.
+
+style-luther.md
+    Notes sur le style de Luther (oralité, ironie, faux lapsus, images…),
+    en style télégraphique, relevées au fil de la traduction.
 
 ecarts-honigmann.md
     Écarts relevés dans la traduction Honigmann, passage par passage, chacun
@@ -46,6 +50,15 @@ nettoyer.py
     « [n] texte », en bas de leur page ; remet en une colonne l'index.
     pdftotext -layout 9782745333315.pdf brut.txt
     python3 nettoyer.py brut.txt 9782745333315.txt
+
+judensau-gravure.jpg
+    Gravure sur bois de la Judensau (Allemagne, fin du XVe siècle), extraite
+    de 9782745333315.pdf, p. 114 (pdfimages -f 114 -l 114 -j). Non diffusée.
+
+judensau-wittenberg.jpg, judensau-wittenberg-2.jpg
+    Photos du bas-relief de l'église paroissiale de Wittenberg (Wikimedia Commons) :
+    « Lutherstadt Wittenberg, die Stadtkirche, Judensau-Relief.jpg », Dguendel,
+    2023, CC BY 4.0 ; « Judensau Wittenberg.jpg », Posi66, 2017, CC BY-SA 4.0.
 
 wa53.pdf
     Weimarer Ausgabe, t. 53 (1920) ; le traité occupe les pages 417 à 552.
