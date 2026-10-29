@@ -10,7 +10,7 @@ luther-des-juifs.tex
     Les coupures dans le texte sont marquées par \textelp{}.
     Texte allemand modernisé : document anonyme publié sur le web (reprenant
     peut-être une édition du XXe siècle, à vérifier), sauf les passages de WA 53,
-    p. 417, 419, 426-427, 432-433, 444, 447-450, 456-457, 461, 476-483, 502 et 515, modernisés d’après WA 53.
+    p. 417, 419, 426-427, 432-433, 444, 447-450, 456-457, 461, 476-483, 502, 511-512, 515, 520-521 et 522, modernisés d’après WA 53.
     Compilation : make (lualatex).
 
 glossaire.inc
@@ -25,9 +25,16 @@ citations.md
     Citations de Luther relevées au fil du travail, avec texte original,
     traduction et référence exacte.
 
+a-revoir.md
+    Points de traduction à revoir, avec les pistes envisagées.
+
 style-luther.md
     Notes sur le style de Luther (oralité, ironie, faux lapsus, images…),
     en style télégraphique, relevées au fil de la traduction.
+
+reception.md
+    Réception du traité (brochure de Martin Sasse, 1938 ; Streicher, 1946).
+    Scans et transcription de la brochure dans ../ressources/sasse/.
 
 ecarts-honigmann.md
     Écarts relevés dans la traduction Honigmann, passage par passage, chacun
