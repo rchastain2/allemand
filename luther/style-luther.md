@@ -43,7 +43,7 @@ Notes de travail, relevées au fil de la traduction. Pages : WA 53.
 - Échos bibliques glissés dans la polémique : « Miterben » (p. 481, Éphésiens 3, 6).
 - Hyperbole blasphématoire prêtée à l'adversaire : « sie kreuzigten eher noch zehn Messias und schlügen Gott … selber tot » (p. 481).
 - Mots hébreux : « Gojim », « Hemdath », « Schevet », « Schilo ».
-- Vocabulaire des écoles : « Grammatica », « Active », « Passive » (p. 477, 480).
+- Vocabulaire des écoles : « Grammatica », « Active », « Passive » (p. 477, 480) ; « definitio oder prosopopoeia » pour annoncer le discours prêté au chrétien (p. 528).
 - Verve populaire et érudition côte à côte ; traduction n'atténuant ni l'une ni l'autre.
 
 ## Hyperboles et images violentes
