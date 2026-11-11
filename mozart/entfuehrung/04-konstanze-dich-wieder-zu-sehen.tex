@@ -1,0 +1,73 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[a4paper,margin=16mm]{geometry}
+\usepackage[german,main=french]{babel}
+\usepackage{fontspec}
+\usepackage{microtype}
+
+\setmainfont{EBGaramond}
+[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lowercase
+]
+
+\usepackage{paracol}
+\newcommand\chunks[2]{%
+\begin{leftcolumn*}\begin{otherlanguage}{german}%
+{#1}%
+\end{otherlanguage}\end{leftcolumn*}%
+\begin{rightcolumn}\begin{otherlanguage}{french}%
+{#2}%
+\end{otherlanguage}\end{rightcolumn}%
+}
+
+\newcommand\strophe[1]{\subsection*{\normalsize\normalfont\itshape #1}}
+
+\begin{document}\thispagestyle{empty}
+\setlength{\columnsep}{8mm}
+
+
+\begin{paracol}{2}
+
+  \chunks{\section*{Konstanze! dich wieder zu sehen}}
+         {}
+
+  \chunks{\noindent\raggedright\small Wolfgang Amadeus Mozart, \textit{Die Entführung aus dem Serail}}
+         {\noindent\raggedright\small Wolfgang Amadeus Mozart, \textit{L’Enlèvement au sérail}}
+
+  \chunks{\noindent\raggedright\small Libretto von Johann Gottlieb Stephanie (1782)}
+         {\noindent\raggedright\small Livret de Johann Gottlieb Stephanie (1782)}
+
+  \chunks{\strophe{Erster Aufzug, fünfter Auftritt, Nr.~4, Arie}}
+         {\strophe{Premier acte, cinquième scène, n\textsuperscript{o}~4, air}}
+
+  \chunks{\noindent\small(Belmonte allein.)}
+         {}
+
+  \chunks{\begin{verse}
+          \textsc{Belmonte}\\[\medskipamount]
+          Konstanze! dich wieder zu sehen\,--\,--\\
+          O wie ängstlich, o wie feurig\\
+          Klopft mein liebevolles Herz!\\
+          Und des Wiedersehens Zähre\\
+          Lohnt der Trennung bangen Schmerz.
+          \end{verse}}
+         {}
+
+  \chunks{\begin{verse}
+          Schon zittr’ ich und wanke,\\
+          Schon zag’ ich und schwanke,\\
+          Es hebt sich die schwellende Brust:\\
+          Ist das ihr Lispeln?\\
+          Es wird mir so bange;\\
+          War das ihr Seufzen?\\
+          Es glüht mir die Wange;\\
+          Täuscht mich die Liebe, war es ein Traum?
+          \end{verse}}
+         {}
+\end{paracol}
+\end{document}

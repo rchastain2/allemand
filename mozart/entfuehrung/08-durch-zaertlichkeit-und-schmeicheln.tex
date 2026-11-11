@@ -1,0 +1,68 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[a4paper,margin=16mm]{geometry}
+\usepackage[german,main=french]{babel}
+\usepackage{fontspec}
+\usepackage{microtype}
+
+\setmainfont{EBGaramond}
+[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lowercase
+]
+
+\usepackage{paracol}
+\newcommand\chunks[2]{%
+\begin{leftcolumn*}\begin{otherlanguage}{german}%
+{#1}%
+\end{otherlanguage}\end{leftcolumn*}%
+\begin{rightcolumn}\begin{otherlanguage}{french}%
+{#2}%
+\end{otherlanguage}\end{rightcolumn}%
+}
+
+\newcommand\strophe[1]{\subsection*{\normalsize\normalfont\itshape #1}}
+
+\begin{document}\thispagestyle{empty}
+\setlength{\columnsep}{8mm}
+
+
+\begin{paracol}{2}
+
+  \chunks{\section*{Durch Zärtlichkeit und Schmeicheln}}
+         {}
+
+  \chunks{\noindent\raggedright\small Wolfgang Amadeus Mozart, \textit{Die Entführung aus dem Serail}}
+         {\noindent\raggedright\small Wolfgang Amadeus Mozart, \textit{L’Enlèvement au sérail}}
+
+  \chunks{\noindent\raggedright\small Libretto von Johann Gottlieb Stephanie (1782)}
+         {\noindent\raggedright\small Livret de Johann Gottlieb Stephanie (1782)}
+
+  \chunks{\strophe{Zweiter Aufzug, erster Auftritt, Nr.~8, Arie}}
+         {\strophe{Deuxième acte, première scène, n\textsuperscript{o}~8, air}}
+
+  \chunks{\noindent\small(Garten am Palast des Bassa Selim; an der Seite Osmins Wohnung. Osmin, Blonde.)}
+         {}
+
+  \chunks{\begin{verse}
+          \textsc{Blonde}\\[\medskipamount]
+          Durch Zärtlichkeit und Schmeicheln,\\
+          Gefälligkeit und Scherzen,\\
+          Erobert man die Herzen\\
+          Der guten Mädchen leicht:
+          \end{verse}}
+         {}
+
+  \chunks{\begin{verse}
+          Doch mürrisches Befehlen\\
+          Und Poltern, Zanken, Plagen\\
+          Macht, dass in wenig Tagen\\
+          So Lieb’ als Treu entweicht.
+          \end{verse}}
+         {}
+\end{paracol}
+\end{document}

@@ -1,0 +1,119 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[a4paper,margin=16mm]{geometry}
+\usepackage[german,main=french]{babel}
+\usepackage{fontspec}
+\usepackage{microtype}
+
+\setmainfont{EBGaramond}
+[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lowercase
+]
+
+\usepackage{paracol}
+\newcommand\chunks[2]{%
+\begin{leftcolumn*}\begin{otherlanguage}{german}%
+{#1}%
+\end{otherlanguage}\end{leftcolumn*}%
+\begin{rightcolumn}\begin{otherlanguage}{french}%
+{#2}%
+\end{otherlanguage}\end{rightcolumn}%
+}
+
+\newcommand\strophe[1]{\subsection*{\normalsize\normalfont\itshape #1}}
+
+\begin{document}\thispagestyle{empty}
+\setlength{\columnsep}{8mm}
+
+
+\begin{paracol}{2}
+
+  \chunks{\section*{Der Vogelfänger bin ich ja}}
+         {\section*{L’attrapeur d’oiseaux, oui c’est moi}}
+
+  \chunks{\noindent\raggedright\small Wolfgang Amadeus Mozart, \textit{Die Zauberflöte}}
+         {\noindent\raggedright\small Wolfgang Amadeus Mozart, \textit{La Flûte enchantée}}
+
+  \chunks{\noindent\raggedright\small Libretto von Emanuel Schikaneder (1791)}
+         {\noindent\raggedright\small Livret d’Emanuel Schikaneder (1791)}
+
+  \chunks{}
+         {\noindent\raggedright\small Texte français : Jean Spenlehauer}
+
+  \chunks{\strophe{Erster Aufzug, zweiter Auftritt, Nr.~2, Arie}}
+         {\strophe{Premier acte, deuxième scène, n\textsuperscript{o}~2, air}}
+
+  \chunks{\noindent\small(Papageno kommt den Fußsteig herunter, hat auf dem Rücken eine große Vogelsteige, die hoch über den Kopf geht, worin verschiedene Vögel sind; auch hält er mit beiden Händen ein Faunen-Flötchen, pfeift und singt.)}
+         {\noindent\small(Papageno arrive, descendant le sentier, ayant sur le dos une grande cage dépassant largement sa tête et où se trouvent différents oiseaux ; il a aussi une flûte de Pan, il siffle et chante.)}
+
+  \chunks{\begin{verse}
+          \textsc{Papageno}\\[\medskipamount]
+          Der Vogelfänger bin ich ja,\\
+          Stets lustig, heißa! hopsasa!\\
+          Ich Vogelfänger bin bekannt\\
+          Bei Alt und Jung im ganzen Land.\\
+          Weiß mit dem Locken umzugehn,\\
+          Und mich aufs Pfeifen zu verstehn.\\
+          Drum kann ich froh und lustig sein,\\
+          Denn alle Vögel sind ja mein.
+          \end{verse}}
+         {\begin{verse}
+          \textsc{Papageno}\\[\medskipamount]
+          L’attrapeur d’oiseaux, oui c’est moi\\
+          Toujours gai, heissa, hopsasa !\\
+          Moi, attrapeur d’oiseau, je suis connu\\
+          Par grands et petits dans tout le pays.\\
+          Je m’y connais en appeaux\\
+          Et en sifflets.\\
+          Donc je peux être joyeux et gai\\
+          Car tous les oiseaux sont à moi.
+          \end{verse}}
+
+  \chunks{\begin{verse}
+          Der Vogelfänger bin ich ja,\\
+          Stets lustig, heißa! hopsasa!\\
+          Ich Vogelfänger bin bekannt,\\
+          Bei Alt und Jung im ganzen Land.\\
+          Ein Netz für Mädchen möchte ich,\\
+          Ich fing’ sie dutzendweiß für mich.\\
+          Dann sperrte ich sie bei mir ein,\\
+          Und alle Mädchen wären mein.
+          \end{verse}}
+         {\begin{verse}
+          L’attrapeur d’oiseaux, oui c’est moi\\
+          Toujours gai, heissa, hopsasa !\\
+          Moi, attrapeur d’oiseau, je suis connu\\
+          Par grands et petits dans tout le pays.\\
+          J’aimerais avoir un filet à filles\\
+          Je m’en attraperais par douzaines\\
+          Puis je les enfermerais chez moi\\
+          Et toutes les filles seraient à moi.
+          \end{verse}}
+
+  \chunks{\begin{verse}
+          Wenn alle Mädchen wären mein,\\
+          So tauschte ich brav Zucker ein:\\
+          Die, welche mir am liebsten wär’,\\
+          Der gäb’ ich gleich den Zucker her.\\
+          Und küßte sie mich zärtlich dann,\\
+          Wär’ sie mein Weib und ich ihr Mann.\\
+          Sie schlief’ an meiner Seite ein,\\
+          Ich wiegte wie ein Kind sie ein.
+          \end{verse}}
+         {\begin{verse}
+          Si toutes les filles étaient à moi,\\
+          Je les échangerais contre du sucre :\\
+          A celle que j’aimerais le plus,\\
+          Je donnerais ce sucre.\\
+          Et si elle m’embrassait tendrement,\\
+          Elle serait ma femme et moi son mari.\\
+          Elle s’endormirait à mes côtés,\\
+          Je la bercerais comme un enfant.
+          \end{verse}}
+\end{paracol}
+\end{document}

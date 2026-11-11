@@ -1,0 +1,77 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[a4paper,margin=16mm]{geometry}
+\usepackage[german,main=french]{babel}
+\usepackage{fontspec}
+\usepackage{microtype}
+
+\setmainfont{EBGaramond}
+[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lowercase
+]
+
+\usepackage{paracol}
+\newcommand\chunks[2]{%
+\begin{leftcolumn*}\begin{otherlanguage}{german}%
+{#1}%
+\end{otherlanguage}\end{leftcolumn*}%
+\begin{rightcolumn}\begin{otherlanguage}{french}%
+{#2}%
+\end{otherlanguage}\end{rightcolumn}%
+}
+
+\newcommand\strophe[1]{\subsection*{\normalsize\normalfont\itshape #1}}
+
+\begin{document}\thispagestyle{empty}
+\setlength{\columnsep}{8mm}
+
+
+\begin{paracol}{2}
+
+  \chunks{\section*{O! wie will ich triumphiren}}
+         {}
+
+  \chunks{\noindent\raggedright\small Wolfgang Amadeus Mozart, \textit{Die Entführung aus dem Serail}}
+         {\noindent\raggedright\small Wolfgang Amadeus Mozart, \textit{L’Enlèvement au sérail}}
+
+  \chunks{\noindent\raggedright\small Libretto von Johann Gottlieb Stephanie (1782)}
+         {\noindent\raggedright\small Livret de Johann Gottlieb Stephanie (1782)}
+
+  \chunks{\strophe{Dritter Aufzug, fünfter Auftritt, Nr.~19, Arie}}
+         {\strophe{Troisième acte, cinquième scène, n\textsuperscript{o}~19, air}}
+
+  \chunks{\noindent\small(Osmin allein.)}
+         {}
+
+  \chunks{\begin{verse}
+          \textsc{Osmin}\\[\medskipamount]
+          O! wie will ich triumphiren!\\
+          Wenn sie euch zum Richtplatz führen\\
+          Und die Hälse schnüren zu;\\
+          Hüpfen will ich, lachen, springen\\
+          Und ein Freudenliedchen singen\\
+          Denn nun hab’ ich vor euch Ruh.
+          \end{verse}}
+         {}
+
+  \chunks{\begin{verse}
+          Schleicht nur säuberlich und leise\\
+          Ihr verdammten Harems-Mäuse,\\
+          Unser Ohr entdeckt euch schon;\\
+          Und eh’ ihr uns könnt entspringen,\\
+          Seht ihr euch in unsern Schlingen,\\
+          Und erhaschet euren Lohn.
+          \end{verse}}
+         {}
+
+  \chunks{\begin{verse}
+          O! wie will ich triumphiren!\,\dots{}
+          \end{verse}}
+         {}
+\end{paracol}
+\end{document}

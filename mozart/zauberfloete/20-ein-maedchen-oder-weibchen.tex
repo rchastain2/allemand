@@ -1,0 +1,134 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[a4paper,margin=16mm]{geometry}
+\usepackage[german,main=french]{babel}
+\usepackage{fontspec}
+\usepackage{microtype}
+
+\setmainfont{EBGaramond}
+[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lowercase
+]
+
+\usepackage{paracol}
+\newcommand\chunks[2]{%
+\begin{leftcolumn*}\begin{otherlanguage}{german}%
+{#1}%
+\end{otherlanguage}\end{leftcolumn*}%
+\begin{rightcolumn}\begin{otherlanguage}{french}%
+{#2}%
+\end{otherlanguage}\end{rightcolumn}%
+}
+
+\newcommand\strophe[1]{\subsection*{\normalsize\normalfont\itshape #1}}
+
+\begin{document}\thispagestyle{empty}
+\setlength{\columnsep}{8mm}
+
+
+\begin{paracol}{2}
+
+  \chunks{\section*{Ein Mädchen oder Weibchen}}
+         {\section*{Une fille ou une petite femme}}
+
+  \chunks{\noindent\raggedright\small Wolfgang Amadeus Mozart, \textit{Die Zauberflöte}}
+         {\noindent\raggedright\small Wolfgang Amadeus Mozart, \textit{La Flûte enchantée}}
+
+  \chunks{\noindent\raggedright\small Libretto von Emanuel Schikaneder (1791)}
+         {\noindent\raggedright\small Livret d’Emanuel Schikaneder (1791)}
+
+  \chunks{}
+         {\noindent\raggedright\small Texte français : Jean Spenlehauer}
+
+  \chunks{\strophe{Zweiter Aufzug, dreiundzwanzigster Auftritt, Nr.~20, Arie}}
+         {\strophe{Deuxième acte, vingt-troisième scène, n\textsuperscript{o}~20, air}}
+
+  \chunks{\noindent\small(Er schlägt das Glockenspiel.)}
+         {\noindent\small(Il joue sur son glockenspiel.)}
+
+  \chunks{\begin{verse}
+          \textsc{Papageno}\\[\medskipamount]
+          Ein Mädchen oder Weibchen wünscht Papageno sich!\\
+          O so ein sanftes Täubchen wär’ Seligkeit für mich!\\
+          Dann schmeckte mir Trinken und Essen\\
+          Dann könnt’ ich mit Fürsten mich messen,\\
+          Des Lebens als Weiser mich freun,\\
+          Und wie im Elysium sein.\\
+          Dann könnt’ ich, mit Fürsten, mich messen,\\
+          Des Lebens als Weiser mich freun,\\
+          Und wie im Elysium sein, im Elysium sein,\\
+          Im Elysium sein!
+          \end{verse}}
+         {\begin{verse}
+          \textsc{Papageno}\\[\medskipamount]
+          Une fille ou une petite femme à lui,\\
+          c’est ce que désire Papageno !\\
+          O une si douce petite colombe serait la félicité pour moi !\\
+          Alors j’apprécierais le boire et le manger,\\
+          Alors le roi ne serait pas mon cousin,\\
+          Je jouirais de la vie en sage,\\
+          Je serais comme en paradis.\\
+          Alors le roi ne serait pas mon cousin,\\
+          Je jouirais de la vie en sage,\\
+          Je serais comme en paradis,\\
+          En paradis, en paradis.
+          \end{verse}}
+
+  \chunks{\begin{verse}
+          Ein Mädchen oder Weibchen wünscht Papageno sich!\\
+          O so ein sanftes Täubchen wär’ Seligkeit für mich!\\
+          Ach kann ich denn keiner von allen\\
+          Den reizenden Mädchen gefallen?\\
+          Helf’ eine mir nur aus der Not,\\
+          Sonst gräm’ ich mich wahrlich zu Tod.\\
+          Ach kann ich, denn keiner, gefallen\\
+          Helf’ eine mir nur aus der Not,\\
+          Sonst gräm’ ich mich wahrlich zu Tod.\\
+          Mich wahrlich zu Tod, mich wahrlich zu Tod.
+          \end{verse}}
+         {\begin{verse}
+          Une fille ou une petite femme à lui,\\
+          c’est ce que désire Papageno !\\
+          O une si douce petite colombe serait la félicité pour moi !\\
+          Ah, ne puis-je plaire à aucune\\
+          De ces charmantes jeunes filles ?\\
+          Il faut qu’une me sorte de ma peine,\\
+          Sinon, vraiment, je mourrai de chagrin.\\
+          Ah, ne puis-je plaire à aucune\\
+          Il faut qu’une me sorte de ma peine,\\
+          Sinon, vraiment, je mourrai de chagrin.\\
+          Je mourrai de chagrin, je mourrai de chagrin.
+          \end{verse}}
+
+  \chunks{\begin{verse}
+          Ein Mädchen oder Weibchen wünscht Papageno sich!\\
+          O so ein sanftes Täubchen wär’ Seligkeit für mich!\\
+          Wird keine mir Liebe gewähren,\\
+          So muß mich die Flamme verzehren,\\
+          Doch küßt mich ein weiblicher Mund\\
+          So bin ich schon wieder gesund,\\
+          Doch küßt mich ein weiblicher Mund\\
+          Doch küßt mich ein weiblicher Mund\\
+          So bin ich schon wieder gesund,\\
+          Schon wieder gesund, schon wieder gesund.
+          \end{verse}}
+         {\begin{verse}
+          Une fille ou une petite femme à lui,\\
+          c’est ce que désire Papageno !\\
+          O une si douce petite colombe serait la félicité pour moi !\\
+          Si aucune ne m’accorde son amour,\\
+          Alors les flammes me dévoreront,\\
+          Mais que m’embrasse une bouche féminine,\\
+          Alors je retrouverai la santé.\\
+          Mais que m’embrasse une bouche féminine\\
+          Mais que m’embrasse une bouche féminine,\\
+          Alors je retrouverai la santé,\\
+          Retrouverai la santé, retrouverai la santé.
+          \end{verse}}
+\end{paracol}
+\end{document}

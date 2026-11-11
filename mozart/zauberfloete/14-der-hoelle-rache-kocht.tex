@@ -1,0 +1,92 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[a4paper,margin=16mm]{geometry}
+\usepackage[german,main=french]{babel}
+\usepackage{fontspec}
+\usepackage{microtype}
+
+\setmainfont{EBGaramond}
+[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lowercase
+]
+
+\usepackage{paracol}
+\newcommand\chunks[2]{%
+\begin{leftcolumn*}\begin{otherlanguage}{german}%
+{#1}%
+\end{otherlanguage}\end{leftcolumn*}%
+\begin{rightcolumn}\begin{otherlanguage}{french}%
+{#2}%
+\end{otherlanguage}\end{rightcolumn}%
+}
+
+\newcommand\strophe[1]{\subsection*{\normalsize\normalfont\itshape #1}}
+
+\begin{document}\thispagestyle{empty}
+\setlength{\columnsep}{8mm}
+
+
+\begin{paracol}{2}
+
+  \chunks{\section*{Der Hölle Rache kocht in meinem Herzen}}
+         {\section*{L’enfer de la vengeance bouillonne dans mon cœur}}
+
+  \chunks{\noindent\raggedright\small Wolfgang Amadeus Mozart, \textit{Die Zauberflöte}}
+         {\noindent\raggedright\small Wolfgang Amadeus Mozart, \textit{La Flûte enchantée}}
+
+  \chunks{\noindent\raggedright\small Libretto von Emanuel Schikaneder (1791)}
+         {\noindent\raggedright\small Livret d’Emanuel Schikaneder (1791)}
+
+  \chunks{}
+         {\noindent\raggedright\small Texte français : Jean Spenlehauer}
+
+  \chunks{\strophe{Zweiter Aufzug, achter Auftritt, Nr.~14, Arie}}
+         {\strophe{Deuxième acte, huitième scène, n\textsuperscript{o}~14, air}}
+
+  \chunks{\begin{verse}
+          \textsc{Königin der Nacht}\\[\medskipamount]
+          Der Hölle Rache kocht in meinem Herzen,\\
+          Tod und Verzweiflung, Tod und Verzweiflung\\
+          Flammet um mich her!\\
+          Fühlt nicht durch dich Sarastro Todesschmerzen,\\
+          So bist du meine Tochter nimmermehr,\\
+          So bist du, nein, mein Tochter nimmermehr:
+          \end{verse}}
+         {\begin{verse}
+          \textsc{La Reine de la Nuit}\\[\medskipamount]
+          L’enfer de la vengeance bouillonne dans mon cœur,\\
+          Mort et désespoir, mort et désespoir\\
+          M’entourent de leurs flammes !\\
+          Si par toi Sarastro n’éprouve pas les souffrances de la mort,\\
+          Alors, tu ne seras plus jamais ma fille,\\
+          Tu ne seras plus, non, plus jamais ma fille.
+          \end{verse}}
+
+  \chunks{\begin{verse}
+          Verstoßen sei auf ewig,\\
+          Verlassen sei auf ewig,\\
+          Zertrümmert sei’n auf ewig\\
+          Alle Bande der Natur,\\
+          Verstoßen, verlassen, und zertrümmert\\
+          Alle Bande der Natur,\\
+          Wenn nicht durch dich Sarastro wird erblassen!\\
+          Hört, hört, hört, Rachegötter! Hört der Mutter Schwur.
+          \end{verse}}
+         {\begin{verse}
+          Que soient rejetés pour toujours,\\
+          Que soient abandonnés pour toujours,\\
+          Que soient détruits pour toujours,\\
+          Tous les liens de la nature,\\
+          Rejetés, abandonnés et détruits,\\
+          Tous les liens de la nature,\\
+          Si, par ta main, Sarastro n’est pas éliminé !\\
+          Ecoute, écoute, écoute, vengeance des dieux !\\
+          Ecoute le serment de la mère.
+          \end{verse}}
+\end{paracol}
+\end{document}
